@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+  
 }
-
+body{
+  font-family: 'Montserrat', sans-serif !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+.slick-slider.slick-initialized {
+  display: block;
+}
+.slick-arrow.slick-prev {
+  background: black;
+}
+.slick-arrow.slick-next {
+  background: black;
+}
+
+.containerSlider{
+  padding: 10px 15px;
+}
+
+.slick-slide .slick-active{
+  width: 211px;
+}
+
+.slick-next:before,.slick-prev:before{
+  font-size: 35px !important;
+  color: #b5b6ba!important;
+}
+.itemSlider{
+  width: 211px !important;
+  display: inline-block;
+}
+
+.selling li{
+  margin: 24px 0;
+  text-align: left;
+  font-size: 25px;
+}
+.selling li p{
+  color: #000000D9;
+  font-size: 15px;
+  margin-bottom: 1em;
+}
+
+.selling li span{
+  font-size: 20px;
+  font-weight: bold;
+}
+.video{
+  position: relative;
+}
+.video .modal-btn::after{
+  background: url('https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/desktop-play-button.c1196d6.png') no-repeat;
+  background-size: 80px ;
+  z-index: 1;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  height: 80px;
+  width: 100%;
 }
