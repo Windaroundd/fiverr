@@ -33,6 +33,7 @@ export default function Carousel() {
           fontSize: "50px",
           zIndex: "1",
           opacity: 0.75,
+          
         }}
         onClick={onClick}
       />
@@ -65,7 +66,7 @@ export default function Carousel() {
     <div className="container mx-auto">
       <Slider {...settings}>
         <div className="carousel-container">
-          <div className="carousel-img pl-20 ">
+          <div className="carousel-img">
             <button onClick={() => { handleOnClick(0) }}  className="carousel-button">
               <img
                 className="w-100 h-100"
@@ -104,7 +105,7 @@ export default function Carousel() {
         </div>
 
         <div className="carousel-container">
-          <div className="carousel-img pl-20 ">
+          <div className="carousel-img ">
             <button onClick={() => { handleOnClick(1) }} className="carousel-button">
               <img
                 className="w-100 h-100"
@@ -143,7 +144,7 @@ export default function Carousel() {
         </div>
 
         <div className="carousel-container">
-          <div className="carousel-img pl-20 ">
+          <div className="carousel-img ">
             <button onClick={() => { handleOnClick(2) }} className="carousel-button">
               <img
                 className="w-100 h-100"
@@ -182,7 +183,7 @@ export default function Carousel() {
         </div>
         
         <div className="carousel-container">
-          <div className="carousel-img pl-20 ">
+          <div className="carousel-img ">
             <button onClick={()=>{handleOnClick(3)}} className="carousel-button">
               <img
                 className="w-100 h-100"

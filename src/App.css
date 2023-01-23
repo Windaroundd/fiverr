@@ -99,7 +99,8 @@ body{
 
 .carousel-container{
   display: flex !important;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
   
 
 }
@@ -132,6 +133,7 @@ body{
   font-weight: 500;
 }
 
+
 .carousel-button::after{
   background: url('https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/desktop-play-button.c1196d6.png') no-repeat;
   background-size: 80px ;
@@ -142,5 +144,124 @@ body{
   top: 40%;
   left: 50%;
   height: 80px;
+  width: 100%;
+}
+
+.main-categories-img{
+  display: block;
+    height: 48px;
+    margin: 0 auto 15px;
+    width: 48px;
+}
+.categories{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s;
+  border-bottom: 2px solid #c5c6c9 ;
+  width: 48px;
+}
+/* .categories:not(:hover){
+  border-color: #c5c6c9;
+} */
+.categories::after{
+ 
+  content: "";
+  padding: 0 0 8px;
+  position: absolute;
+  bottom: -1%;
+  right: 50%;
+  
+  transform: translateX(50%);
+  
+}
+
+.categories:hover{
+ border-color: #1dbf73;
+width: 80px;
+z-index: 4;
+
+}
+
+.footer-fiver{
+  border-top: 2px solid #c5c6c9 ;
+}
+
+/* .footer-carousel .sub-content-1::after{
+  content: 'Content Marketing';
+  color: #b5b6ba;
+  display: block;
+}
+
+.footer-carousel .sub-content-2::after{
+  content: 'Invoice Software';
+  color: #b5b6ba;
+  display: block;
+}
+.footer-carousel .sub-content-3::after{
+  content: 'Online Courses';
+  color: #b5b6ba;
+  display: block;
+} */
+.footer-carousel{
+  position: relative;
+}
+.footer-carousel p::after{
+ content: "";
+ background: #74767e;
+ bottom: 0;
+ right: 50%;
+ height: 1px;
+ position: absolute;
+ width: 50%;
+ z-index: 1;
+
+}
+.footer-carousel p:hover{
+  width: 100%;
+}
+.footer-carousel ul li a{
+  position: relative;
+  width: 0;
+  padding: 5px 0;
+}
+.footer-carousel ul li a::after{
+  content: "";
+  background: #74767e;
+  bottom: 0;
+  left: 0%;
+  height: 1px;
+  position: absolute;
+  width: 0 ;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.footer-carousel ul li:hover a::after{
+  width: 100%;
+}
+
+.footer-carousel ul li .sub-chapter::after{
+  content: "";
+  background: #74767e;
+  bottom: 0;
+  left: 0%;
+  height: 1px;
+  position: absolute;
+  width: 0 ;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.footer-carousel ul li .sub-chapter{
+  position: relative;
+ 
+  padding: 3px 0;
+  display: block;
+  color:#b5b6ba;
+  display:block
+}
+
+.footer-carousel ul li .sub-chapter:hover::after{
   width: 100%;
 }

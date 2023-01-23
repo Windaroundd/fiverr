@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from './Carousel'
 import Infor from './Infor'
 import SliderItem from './SliderItem'
+import Testimonial from './Testimonial'
 
 export default function HomePage() {
   return (
@@ -9,8 +10,7 @@ export default function HomePage() {
         <SliderItem/>
         <Infor/>
         <Carousel/>
-
-      <h2>hello</h2>
+        <Testimonial/>
     </div>
   )
 }
