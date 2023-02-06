@@ -452,6 +452,13 @@ transition: 0.5s;
   transition: all 0.3s ease;
 
 }
+.icon{
+  transition: all;
+  color: #62646a;
+}
+.left-show-banner button:hover .icon{
+  color:#fff ;
+}
 .header .header-row .right ul li:hover .icon-active{
   color: #1dbf73!important;
 }
@@ -464,6 +471,7 @@ transition: 0.5s;
   z-index: 999;
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid rgba(197, 198, 201, .5);
 }
 .hide-list-item{
   background: initial;
@@ -515,6 +523,16 @@ transition: all 5s ease!important;
 }
 .item-list .job-item .job-item-li h1:hover .job-detail{
   display:block ;
+}
+.show-banner-service{
+  border: 1px solid rgba(197, 198, 201, .9);
+  padding: 25px 30px;
+  color: #404145;
+}.ant-switch {
+  background-color: #62646a!important;
+}
+.ant-switch-checked{
+  background-color: #1dbf73!important;
 }
 
 

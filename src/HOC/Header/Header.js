@@ -4,18 +4,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars,faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { Form } from "react-router-dom";
 import ListItem from "./ListItem";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 export default function Header() {
-  
+    const location = useLocation()
     const [navBar,setNavBar]= useState()
-    
-    const changeBackground = () => { 
+    useEffect(() => { 
+      const changeBackground = () => { 
         if(window.scrollY >=10){
             setNavBar(true)
         }else{
             setNavBar(false)
         }
      }
-  window.addEventListener('scroll', changeBackground);   
+     if(location.pathname != '/'){
+      setNavBar(true)
+     window.removeEventListener('scroll',changeBackground)
+     }else{
+      window.addEventListener('scroll', changeBackground); 
+     }
+     },[])
+    
+   
   return (
     <div className="main">
         <header className={navBar ? 'header' : 'header-active'}>
