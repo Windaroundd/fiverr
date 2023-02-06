@@ -381,7 +381,10 @@ color: #fff!important;
   border-bottom: 1px solid transparent;
   border-top: none;
 }
-.header-active .header-row .right ul li:hover{
+.item-p{
+transition: 0.5s;
+}
+.header-active .header-row .right ul li:hover, .item-p:hover{
   color: #1dbf73;
 }
 .header-wrapper{
@@ -504,11 +507,18 @@ transition: all 5s ease!important;
 .job-detail{
   background: #fff;
   z-index: 10000;
-  padding: 20px 10px;
+  padding: 20px 30px;
   position: absolute;
   text-align: left;
-  width: 10vw;
+  width: 15vw;
+  box-shadow: 0 1px 3px #dadbdd;
 }
 .item-list .job-item .job-item-li h1:hover .job-detail{
   display:block ;
 }
+
+
+
+/* .button-hover h2{
+  position: relative;
+} */

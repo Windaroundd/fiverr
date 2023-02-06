@@ -5,6 +5,7 @@ import { faBars,faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { Form } from "react-router-dom";
 import ListItem from "./ListItem";
 export default function Header() {
+  
     const [navBar,setNavBar]= useState()
     
     const changeBackground = () => { 
