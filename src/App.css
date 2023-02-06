@@ -493,10 +493,22 @@ color: #fff!important;
   background-color: #1dbf73;
   transition: all 0.5s ease;
 }
-
+.job-item-li .job-detail{
+display: none;
+transition: all 5s ease!important;
+}
+.job-item-li:hover .job-detail{
+  display: block;
+  transition: all 5s ease;
+}
 .job-detail{
   background: #fff;
   z-index: 10000;
-  padding: 20px 30px;
+  padding: 20px 10px;
   position: absolute;
+  text-align: left;
+  width: 10vw;
+}
+.item-list .job-item .job-item-li h1:hover .job-detail{
+  display:block ;
 }
