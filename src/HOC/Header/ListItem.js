@@ -9,8 +9,9 @@ import { recieveId } from "../../redux-toolkit/headerItem";
 
 export default function ListItem() {
   const [item, setItem] = useState([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [jobDetail, setJobDetail] = useState(null);
+  const [filterItem, setFilterItem] = useState([]);
   useEffect(() => {
     jobSevice
       .getJobCategory()
@@ -22,9 +23,9 @@ export default function ListItem() {
       });
   }, []);
 
- const dispatchId = (id) => { 
-     dispatch(recieveId(id))
-   }
+  const dispatchId = (id) => {
+    dispatch(recieveId(id));
+  };
   // const handleOnMouseOver = (event) => {
   //   console.log("event: ", event);
   //   const element_id = event.target.id;
@@ -44,29 +45,32 @@ export default function ListItem() {
   //     return <></>;
   //   }
   // };
-  const filter = (idJob) => { 
-    const filteredItem = item.filter(idJob=>{
-        return  item.id== idJob
-    })
-    setJobDetail(filteredItem)
-   }
-  const mapItem =  () => {
-     return  item?.map((item) => {
+  const filter = (idJob) => {
+    const filteredItem = item.filter((idJob) => {
+      return item.id == idJob;
+    });
+    setFilterItem(filteredItem);
+  };
+  const mapItem = () => {
+    return item?.map((item) => {
       return (
         <>
           <ul className="space-x-3 cursor-pointer job-item">
-            <li
-             
-              id="job-item-li"
-              className="job-item-li"
-            >
-              <h1  onMouseOver={()=>{dispatchId(item.id)}} className="job-category">{item.tenLoaiCongViec}</h1>
+            <li id="job-item-li" className="job-item-li">
+              <h1
+                onMouseOver={() => {
+                  filter(item.id);
+                }}
+                className="job-category"
+              >
+                {item.tenLoaiCongViec}
+              </h1>
               <div id="job-detail" className="job-detail space-x-3 delay-150">
                 {/* container item-detail mx-auto" */}
                 <div className="container mx-auto text-left transition-all delay-500">
                   <h2></h2>
                   <NavLink className="">
-                    <button >
+                    <button>
                       <ItemDetail />
                     </button>
                   </NavLink>
