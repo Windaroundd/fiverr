@@ -6,5 +6,9 @@ export const jobSevice = {
     },
     getJobList : (id) => { 
         return https.get(`api/cong-viec/lay-chi-tiet-loai-cong-viec/${id}`)
-     }
+     },
+    getJobDetail: (id) =>{
+        return https.get(`api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/${id}`)
+    }
+
 }

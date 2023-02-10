@@ -31,7 +31,7 @@ export default function SliderItem() {
   let settings = {
     arrows: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 5,
     nextArrow: <SampleNextArrow />,

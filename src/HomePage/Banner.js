@@ -1,10 +1,14 @@
 import React from "react";
 import { Swiper, SwiperSlide} from "swiper/react";
+// import Swiper from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Pagination } from "swiper";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+import {  Autoplay,EffectFade, Pagination, Transition } from "swiper";
 import { useEffect } from "react";
 import { useState } from "react";
 import { jobSevice } from './../services/jobService';
@@ -12,28 +16,15 @@ import { noAuto } from "@fortawesome/fontawesome-svg-core";
 
 export default function Banner() {
 
-
-
-//  let displayJobCategory = () => { 
-//   return jobCategory.map((item)=>{
-//     return  <div className="bg-transparent transition-all delay-150 hover:bg-white rounded-full text-white-700 font-semibold text-sm hover:text-black  px-4 border  border-white hover:border-transparent mr-5">
-//       <button>{item.tenLoaiCongViec}</button>
-//     </div>
-//   }) 
-//   }
   return (
     <div>
       <Swiper
-        transition
-       effect='fade'
-        
-        autoplay={{
-          
-          disableOnInteraction: false,
-         
-          
-        }}
-        modules={[Pagination,Autoplay,EffectFade]}
+        EffectFade={true}
+        loop={true}
+        slidesPerView={1}
+        navigation
+        autoplay={{delay:5000}}
+        modules={[Autoplay,Pagination,EffectFade]}
         className="mySwiper"
         pagination={{ clickable: true }}
         // modules={[Pagination]}

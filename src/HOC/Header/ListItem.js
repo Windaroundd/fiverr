@@ -3,19 +3,21 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { jobSevice } from "./../../services/jobService";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { recieveId } from "../../redux-toolkit/headerItem";
 
 
 
 export default function ListItem() {
   const [item, setItem] = useState([]);
- 
+  const dispatch = useDispatch()
   const [jobDetail, setJobDetail] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
   useEffect(() => {
     jobSevice
       .getJobCategory()
       .then((res) => {
-        console.log("res: ", res);
+        
 
         setItem(res.data.content);
       })
@@ -24,7 +26,9 @@ export default function ListItem() {
       });
   }, []);
 
-
+  const dispatchItem = (id) => { 
+    dispatch(recieveId(id))
+   }
 
   //   console.log("event: ", event);
   //   const element_id = event.target.id;
@@ -56,8 +60,9 @@ export default function ListItem() {
  
 
     return item.map((i)=>{
-      
-    return <p className="pb-2 item-p">{i.tenChiTiet}</p>
+ 
+     
+    return <p onClick={() => { dispatchItem(i.id) }} className="pb-2 item-p">{i.tenChiTiet}</p>
    })
   
     
