@@ -1,12 +1,42 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Card } from 'antd';
+import { useEffect, useState } from "react";
 import React from "react";
+import { jobSevice } from './../services/jobService';
+const { Meta } = Card;
 const buttonTitle =
-  "w-20 bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded space-x-3 transition delay-75";
+  "w-50 bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded space-x-3 transition delay-75";
 export default function TitlePage() {
+    const [titleItem, setTitleItem] = useState([])
+    const [itemFilter, setItemFilter] = useState()
+    const mapContent = () => { 
+        return titleItem?.map((item)=>{
+            return <>
+            <p>{item.tenLoaiCongViec}</p>
+            </>
+        })
+     }
+
+    const FilterItem = (idItem) => { 
+        const filteredItem = titleItem.filter((item)=>{
+            return item.id == idItem
+        })
+        setItemFilter(filteredItem)
+     }
+    useEffect(() => { 
+        jobSevice.getJobCategory()
+         .then((res) => {
+           console.log(res.data.content);
+           setTitleItem(res.data.content)
+         })
+         .catch((err) => {
+           console.log(err);
+              });
+     }, [])
   return (
-    <div className="w-full py-40">
+    <div className="w-full h-screen py-40">
       <div className="show-title space-y-8">
         <div className="container mx-auto title-service  space-y-8">
           <div className="title-content flex flex-col justify-center items-center space-y-5">
@@ -106,6 +136,10 @@ export default function TitlePage() {
                 
               </div>
             </div>
+          </div>
+
+          <div className="explore-item">
+            <h1 className="text-2xl text-left font-medium">Explore {mapContent()}</h1>
           </div>
         </div>
       </div>
