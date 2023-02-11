@@ -473,15 +473,16 @@ transition: 0.5s;
 }
 .item-list .job-item .job-item-li h1:hover::after{
   width: 100%;
+  
 }
 .item-list .job-item .job-item-li h1:after{
   content: "";
   position: absolute;
-  padding: 1px ;
+  height: 1px;
   bottom: 0;
   left: 0;
-  width: 0;
-  z-index: 9999;
+  width: 0%;
+  z-index: 20;
   background-color: #1dbf73;
   transition: all 0.5s ease;
 }
@@ -536,7 +537,7 @@ transition: all 5s ease!important;
 }
 
 .card-body-item{
-  border-bottom: 1px solid #62646a;
+ border-bottom:  1px solid rgba(197, 198, 201, .5);
   padding: 24px;
 }
 .ant-card-body{
@@ -589,3 +590,43 @@ transition: all 5s ease!important;
 /* .button-hover h2{
   position: relative;
 } */
+
+/* titlepage */
+
+.show-title{
+  background-color: #0c3b24;
+  height: 240px;
+  
+}
+.title-content{
+  height: 240px;
+  color: #fff;
+}
+.play-icon{
+  color: #fff;
+  transition: 0.5s;
+}
+
+.title-content button:hover .play-icon{
+  color: #222325;
+}
+
+
+.popular-job-item{
+  box-shadow: 0 0.14px 2.29266px rgb(0 0 0 / 3%), 0 0.37px 4.42626px rgb(0 0 0 / 5%), 0 3px 7px rgb(0 0 0 /9%);
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+.fa-right-icon{
+  color: #404145;
+}
+.popular-content img{
+  height: 50px;
+  
+  
+}
+
+.content-item span{
+  font-weight: 600;
+  color: #404145;
+}

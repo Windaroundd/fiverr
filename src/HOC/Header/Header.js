@@ -21,9 +21,10 @@ export default function Header() {
       setNavBar(true)
      window.removeEventListener('scroll',changeBackground)
      }else{
-      window.addEventListener('scroll', changeBackground); 
+      window.addEventListener('scroll', changeBackground);
+      
      }
-     },[])
+     },[navBar])
     
    
   return (

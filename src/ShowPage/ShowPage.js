@@ -22,18 +22,10 @@ export default function ShowPage() {
   };
   const [itemDetail, setItemDetail] = useState([]);
   // this will cause too many re-render problems if have more than 1 local state and setState inside mapping
-  const [content, setContent] = useState({});
   const idItem = useSelector((state) => {
     return state.headerItem.id;
   });
-  // const mapDetailContent= (item) => {
-  //      item?.map((job)=>{
-  //         return(
-  //           <p>{job?.moTa}</p>
 
-  //         )
-  //         })
-  //        }
   const createStar = (starReview) => {
     switch (starReview) {
       case 1:
@@ -83,11 +75,7 @@ export default function ShowPage() {
           className=""
           style={{ width: 300 }}
           cover={<img alt="example" src={i.congViec.hinhAnh} />}
-          // actions={[
-          //   <SettingOutlined key="setting" />,
-          //   <EditOutlined key="edit" />,
-          //   <EllipsisOutlined key="ellipsis" />,
-          // ]}
+       
         >
           <div className="card-body-item">
             <Meta
@@ -131,6 +119,7 @@ export default function ShowPage() {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0)
     jobSevice
       .getJobDetail(idItem)
       .then((res) => {
@@ -142,7 +131,7 @@ export default function ShowPage() {
       });
   }, [idItem]);
   return (
-    <div style={{ zIndex: "3000" }} className="w-full show-page py-40">
+    <div style={{ zIndex: "50" }} className="w-full show-page py-40">
       <div className="show-banner space-y-8">
         <div className="container mx-auto show-banner-service space-y-3">
           <h1 className="font-bold text-3xl text-left">Result for "html"</h1>

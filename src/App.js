@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
 import Layout from './HOC/Layout';
 import ShowPage from './ShowPage/ShowPage';
+import TitlePage from './TitlePage/TitlePage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout><HomePage/></Layout>}></Route>
         <Route path='/job' element={<Layout><ShowPage/></Layout>}></Route>
+        <Route path='/title' element={<Layout><TitlePage/></Layout>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
