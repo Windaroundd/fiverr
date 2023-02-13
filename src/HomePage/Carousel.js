@@ -63,7 +63,7 @@ export default function Carousel() {
   }
  
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-20">
       <Slider {...settings}>
         <div className="carousel-container">
           <div className="carousel-img">

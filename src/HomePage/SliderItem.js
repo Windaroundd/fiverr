@@ -38,7 +38,7 @@ export default function SliderItem() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto mb-20 ">
     
       <div className="container">
       <h1 className="text-left d-block mx-auto pl-11 pb-7 text-4xl">Popular professional services</h1>

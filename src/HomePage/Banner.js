@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { jobSevice } from './../services/jobService';
 import { noAuto } from "@fortawesome/fontawesome-svg-core";
-
+const buttonBanner = "ml-2 bg-transparent hover:bg-white text-white-700 font-semibold hover:text-black  px-2 border border-white hover:border-transparent "
 export default function Banner() {
 
   return (
@@ -24,26 +24,27 @@ export default function Banner() {
         slidesPerView={1}
         navigation
         autoplay={{delay:5000}}
-        modules={[Autoplay,Pagination,EffectFade]}
+        modules={[Autoplay,EffectFade]}
         className="mySwiper"
-        pagination={{ clickable: true }}
+        
         // modules={[Pagination]}
       >
         <SwiperSlide>
           <img
+           className="banner-img" 
            src="http://demo5.cybersoft.edu.vn/img/1.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://demo5.cybersoft.edu.vn/img/2.png" alt="" />
+          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/2.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://demo5.cybersoft.edu.vn/img/3.png" alt="" />
+          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/3.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://demo5.cybersoft.edu.vn/img/4.png" alt="" />
+          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/4.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="http://demo5.cybersoft.edu.vn/img/5.png" alt="" />
+          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/5.png" alt="" />
         </SwiperSlide>
       </Swiper>
       <section className="slider-content mx-auto container">
@@ -57,16 +58,16 @@ export default function Banner() {
   </form>
   <div className="flex popular">
     <span>Popular:</span>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className="ml-2 bg-transparent hover:bg-white text-white-700 font-semibold hover:text-black py-1 px-2 border border-white hover:border-transparent ">
+    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
       Website Design
     </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className="ml-2 bg-transparent hover:bg-white text-white-700 font-semibold hover:text-black py-1 px-2 border border-white hover:border-transparent ">
+    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
       WordPress
     </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className="ml-2 bg-transparent hover:bg-white text-white-700 font-semibold hover:text-black py-1 px-2 border border-white hover:border-transparent ">
+    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
       Logo Design
     </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className="ml-2 bg-transparent hover:bg-white text-white-700 font-semibold hover:text-black py-1 px-2 border border-white hover:border-transparent ">
+    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
       Video Edditing
     </div>
   </div>

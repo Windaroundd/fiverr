@@ -6,7 +6,7 @@ export default function Infor() {
   const [infoModal,setInfoModal] = useState(false)
   const handleCloseModal = () => { setInfoModal(false) }
     return (
-    <div style={{ backgroundColor: "#f0fdf6" }} className="">
+    <div style={{ backgroundColor: "#f0fdf6" }} className="mb-20">
       <div className="container mx-auto">
         <div className="info flex justify-between items-center">
           <div className="contentInfo text-4xl pl-11 w-1/2">
