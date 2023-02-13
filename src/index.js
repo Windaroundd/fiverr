@@ -7,10 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import headerItem from './redux-toolkit/headerItem';
+import itemTitleSlider from './redux-toolkit/itemTitleSlider';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store_toolkit = configureStore({
   reducer:{
     headerItem,
+    itemTitleSlider,
   }
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));

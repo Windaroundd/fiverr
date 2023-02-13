@@ -240,8 +240,18 @@ z-index: 4;
 
 }
 
-.footer-fiver{
-  border-top: 2px solid #c5c6c9 ;
+.footer-fiver,.footer-bottom{
+  border-top: 1px solid rgba(197, 198, 201, .5);
+}
+.copy-write{
+  color: #b5b6ba;
+  font-size: 14px;
+  
+}
+.icon-footer{
+  color: #74767e;
+  font-weight: 600;
+
 }
 
 /* .footer-carousel .sub-content-1::after{
@@ -262,6 +272,7 @@ z-index: 4;
 } */
 .footer-carousel{
   position: relative;
+
 }
 .footer-carousel p::after{
  content: "";
@@ -281,6 +292,11 @@ z-index: 4;
   position: relative;
   width: 0;
   padding: 5px 0;
+  font-size: 14px;
+}
+
+.footer-text{
+  color: #74767e;
 }
 .footer-carousel ul li a::after{
   content: "";
@@ -292,6 +308,7 @@ z-index: 4;
   width: 0 ;
   z-index: 1;
   transition: 0.5s;
+  
 }
 
 .footer-carousel ul li:hover a::after{
@@ -312,7 +329,7 @@ z-index: 4;
 
 .footer-carousel ul li .sub-chapter{
   position: relative;
- 
+  font-size: 14px;
   padding: 3px 0;
   display: block;
   color:#b5b6ba;
@@ -521,8 +538,16 @@ transition: all 5s ease!important;
 .show-banner-service{
   font-family: 'Montserrat', sans-serif !important;
 }
+.ant-card .ant-card-meta-detail{
+  padding: 10px 15px;
+}
 .ant-card .ant-card-meta-detail .ant-card-meta-title{
   margin-bottom: 0 !important;
+  font-size: 20px!important;
+  padding-bottom: 5px;
+}
+.ant-card-bordered{
+  border: transparent;
 }
 .job-description{
   color: #404145!important;
@@ -595,11 +620,11 @@ transition: all 5s ease!important;
 
 .show-title{
   background-color: #0c3b24;
-  height: 240px;
+  height: 300px;
   
 }
 .title-content{
-  height: 240px;
+  height: 300px;
   color: #fff;
 }
 .play-icon{
@@ -629,4 +654,26 @@ transition: all 5s ease!important;
 .content-item span{
   font-weight: 600;
   color: #404145;
+}
+.service-tags{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.service-tags span{
+background-color: #efeff0;
+border-radius: 32px;
+color: #74767e;
+font-size: 13.5px;
+font-weight: 600;
+line-height: 1.2;
+margin: 0 5px 15px;
+padding: 10px 10px;
+}
+.service-related-title{
+  color: #404145;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
 }

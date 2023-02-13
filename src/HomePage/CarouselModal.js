@@ -6,7 +6,7 @@ export default function CarouselModal({visible,handleOnClose,srcVideo}) {
      }
     if(!visible) return null
     return (
-    <div onClick={handleOnClose} id='carouselModal'  className='inset-0 bg-black fixed z-10 bg-opacity-30 backdrop-blur-sm flex justify-center items-center'>
+    <div style={{zIndex:'100000'}} onClick={handleOnClose} id='carouselModal'  className='inset-0 bg-black fixed  bg-opacity-30 backdrop-blur-sm flex justify-center items-center'>
        <div  style={{width:'900px',height:'auto'}}>
        <video src={srcVideo} preload="auto" autoplay="" style={{width:'100%',height:'auto'}}></video>
 
