@@ -47,6 +47,7 @@ export default function Carousel() {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    
   };
   const handleOnClose= () => { 
     return setCarouselModal(false)
