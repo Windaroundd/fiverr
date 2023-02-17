@@ -9,14 +9,14 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faFemale } from "@fortawesome/free-solid-svg-icons";
 export default function Footer() {
   return (
-    <div style={{ marginTop: "20rem" }} className="footer-fiver py-8">
-      <div className="container mx-auto">
-        <div className="footer-content py-8 flex justify-between space-x-3">
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">Categories</h1>
+    <div style={{ marginTop: "0rem" }} className="footer-fiver py-8">
+      <div className="container mx-auto ">
+        <div className="footer-content  lg:space-y-5 flex justify-between space-x-3">
+          <div className="footer-item px-4  text-left">
+            <h1 className="font-bold py-2">Categories</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -52,11 +52,11 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">About</h1>
+          <div className="footer-item  lg:space-y-5  text-left">
+            <h1 className="font-bold py-2">About</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -81,11 +81,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">Support</h1>
+          <div className="footer-item support lg:space-y-5 space-y-3 text-left">
+            <h1 className="font-bold py-2">Support</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -104,11 +104,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">Community</h1>
+          <div className="footer-item  lg:space-y-5 space-y-3 text-left">
+            <h1 className="font-bold py-2">Community</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -139,11 +139,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">More From Fiverr</h1>
+          <div className="footer-item  lg:space-y-5 space-y-3 text-left">
+            <h1 className="font-bold py-2">More From Fiverr</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -192,11 +192,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-item space-y-5  text-left">
-            <h1 className="font-bold">Categories</h1>
+          {/* <div className="footer-item  lg:space-y-5 space-y-3 text-left">
+            <h1 className="font-bold py-5">Categories</h1>
             <div
               style={{ color: " #74767e" }}
-              className="footer-carousel space-y-5"
+              className="footer-carousel space-y-2"
             >
               <ul className="space-y-5">
                 <li>
@@ -231,11 +231,11 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-bottom">
-          <div className="container flex items-center justify-between  py-8">
+          <div className="container footer-bottom-container flex items-center justify-between  py-8">
             <div className="footer-left flex space-x-3 items-center">
               <span class="logo_footer">
                 <svg
@@ -257,7 +257,7 @@ export default function Footer() {
                 © Fiverr International Ltd. 2022
               </span>
             </div>
-            <div style={{flexBasis:'40%'}} className="footer-right justify-evenly flex px-10 items-center footer-text">
+            <div style={{flexBasis:'60%'}} className="footer-right justify-evenly flex px-10 items-center footer-text">
               <div style={{flexBasis:'40%'}} className="icon-social-media flex space-x-4 justify-evenly">
                 <span>
                   <FontAwesomeIcon className="icon-footer" icon={faTwitter} size="xl" />

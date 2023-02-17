@@ -8,19 +8,20 @@ export default function Infor() {
     return (
     <div style={{ backgroundColor: "#f0fdf6" }} className="mb-20">
       <div className="container mx-auto">
-        <div className="info flex justify-between items-center">
-          <div className="contentInfo text-4xl pl-11 w-1/2">
-            <h1 className="text-left">
+        <div className="info block lg:flex lg:justify-between lg:items-center">
+          <div className="contentInfo  text-2xl lg:text-4xl w-full px-7 lg:pl-11 lg:w-1/2">
+            <h1 className="text-left ">
               A whole world of freelance talent at your fingertips
             </h1>
             <ul className="selling">
               <li>
                 <span
                   style={{
-                    width: "24px",
-                    height: "24px",
+                    width: "10px",
+                    height: "10px",
                     color: "rgb(122,125,133)",
-                    marginRight: "10px",
+                    marginRight: "5px",
+                    display:'inline'
                   }}
                 >
                   {checkIcon}

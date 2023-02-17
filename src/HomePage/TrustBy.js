@@ -7,7 +7,7 @@ export default function TrustBy() {
         <div className="container mx-auto">
             <div className="trust-by-content flex items-center justify-center">
                 <span>Trust By: </span>
-                <ul className='flex justify-evenly items-center'>
+                <ul className='flex justify-evenly items-center space-x-3'>
                     <li>
                         <img src="http://demo5.cybersoft.edu.vn/img/fb.png" alt="" />
                     </li>
@@ -20,7 +20,7 @@ export default function TrustBy() {
                     <li>
                         <img src="http://demo5.cybersoft.edu.vn/img/pg.png" alt="" />
                     </li>
-                    <li>
+                    <li className='hidden lg:block'>
                         <img src="http://demo5.cybersoft.edu.vn/img/paypal.png" alt="" />
                     </li>
                 </ul>

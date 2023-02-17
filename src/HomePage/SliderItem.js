@@ -68,7 +68,7 @@ export default function SliderItem() {
     <div className="container mx-auto mb-20 ">
     
       <div className="container">
-      <h1 className="text-left d-block mx-auto pl-11 pb-7 text-4xl">Popular professional services</h1>
+      <h1 className="text-left d-block mx-auto pl-11 pb-7  text-2xl lg:text-4xl">Popular professional services</h1>
         <div className="slider-package">
         <Slider className="space-x-5" {...settings}>
           <div className="itemSlider">

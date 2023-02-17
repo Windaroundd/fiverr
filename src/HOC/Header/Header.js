@@ -84,7 +84,7 @@ export default function Header() {
                   </div>
                   <div className="header-search">
                     <form>
-                      <div className="search-form sm:hidden md:hidden">
+                      <div className="search-form sm:hidden  lg:block">
                         <span>
                           <input
                             type="search"
@@ -101,7 +101,7 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div className="right  sm:block lg:block xl:block">
+              <div className="right invisible xl:visible">
                 <div className="">
                   <ul className="flex items-center justify-around cursor-pointer text-white">
                     <li>Fiverr Business</li>

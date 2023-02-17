@@ -22,7 +22,6 @@ export default function Banner() {
         EffectFade={true}
         loop={true}
         slidesPerView={1}
-        navigation
         autoplay={{delay:5000}}
         modules={[Autoplay,EffectFade]}
         className="mySwiper"
