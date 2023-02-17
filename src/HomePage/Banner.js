@@ -47,8 +47,8 @@ export default function Banner() {
         </SwiperSlide>
       </Swiper>
       <section className="slider-content mx-auto container">
-        <div className="search">
-          <div className="content">
+        <div className="search container">
+          <div className="content ">
             <div className="searchLeft">
               <h1>Find the perfect <i>freelance</i> services for your business</h1>
   <form action="" role="search" className="flex form-carousel">
