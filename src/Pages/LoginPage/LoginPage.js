@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Checkbox, Form, Input, message } from "antd";
-import { postLogin } from "../../service/userService";
-import { useNavigate } from "react-router-dom";
-import { setUserInfoLogin } from "../../redux-toolkit/userSliceLogin";
+import { postLogin } from "../../services/userService";
+import { NavLink, useNavigate } from "react-router-dom";
+import { setUserInfoLogin } from "../../redux-toolkit/LoginPage/userSliceLogin";
 import { useDispatch } from "react-redux";
-import { userLocalService } from "../../service/localService";
+import { userLocalService } from "../../services/localService";
 
 export default function LoginPage() {
   let navigate = useNavigate();
@@ -95,10 +95,13 @@ export default function LoginPage() {
           </Form.Item>
           <Checkbox>Remember me</Checkbox>
         </Form>
-        <div className="flex">
-          <p>Not a member yet?</p>
-          <button className="text-green-700">Join now</button>
-        </div>
+        <Form.Item>
+          <NavLink to="/signup">
+            <p>Not a member yet?</p>
+            <button className="text-green-700">Join now</button>
+          </NavLink>
+        </Form.Item>
+        <div className="flex"></div>
       </div>
     </div>
   );

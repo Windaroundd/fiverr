@@ -1,4 +1,4 @@
-import { userLocalService } from "../service/localService";
+import { userLocalService } from "../../services/localService";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

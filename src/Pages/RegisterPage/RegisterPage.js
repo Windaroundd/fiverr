@@ -1,16 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getBinhLuan,
-  postLogin,
-  postRegister,
-} from "../../service/userService";
+import { postRegister } from "../../services/userService";
 import { Button, Form, Input, message, Select } from "antd";
-
-import { userLocalService } from "../../service/localService";
+import { userLocalService } from "../../services/localService";
 import "./styleSignup.css";
-import { setUserInforSignup } from "../../redux-toolkit/userSliceSignup";
+import { setUserInforSignup } from "../../redux-toolkit/SignupPage/userSliceSignup";
 
 export default function RegisterPage() {
   let navigate = useNavigate();

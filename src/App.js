@@ -39,9 +39,30 @@ function App() {
               </Layout>
             }
           ></Route>
-          <Route path="/detail" element={<DetailPage />} />
-          <Route path="/signup" element={<RegisterPage />} />
-          <Route path="/signin" element={<LoginPage />} />
+          <Route
+            path="/detail/:id"
+            element={
+              <Layout>
+                <DetailPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Layout>
+                <RegisterPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <Layout>
+                <LoginPage />
+              </Layout>
+            }
+          />
           <Route path="*" element={<NotfoundPage />} />
         </Routes>
       </BrowserRouter>
