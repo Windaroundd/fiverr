@@ -12,6 +12,7 @@ export default function ListItem() {
   const dispatch = useDispatch();
   const [jobDetail, setJobDetail] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
+  
   useEffect(() => {
     jobSevice
       .getJobCategory()

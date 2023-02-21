@@ -8,11 +8,15 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import headerItem from './redux-toolkit/headerItem';
 import itemTitleSlider from './redux-toolkit/itemTitleSlider';
+import searchItem from './redux-toolkit/searchItem';
+import navBar from './redux-toolkit/navBar';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store_toolkit = configureStore({
   reducer:{
     headerItem,
     itemTitleSlider,
+    searchItem,
+    navBar,
   }
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));

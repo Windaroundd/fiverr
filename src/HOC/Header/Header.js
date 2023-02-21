@@ -6,9 +6,16 @@ import { Form } from "react-router-dom";
 import ListItem from "./ListItem";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { recievedName } from "../../redux-toolkit/searchItem";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function Header() {
+  const [searchItem,setSearchItem]= useState()
   const location = useLocation();
+  const dispatch = useDispatch()
+  const navigation = useNavigate()
+  const formSubmitted = useSelector((state) => { return state.searchItem.formSubmitted })
   const [navBar, setNavBar] = useState();
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +30,14 @@ export default function Header() {
     setSelectedOption(option);
     setIsOpen(false);
   };
+  const handleChange = (event) => { 
+    
+    setSearchItem(event.target.value)
+   }
+  const handleSubmit= async (e) => { 
+   await e.preventDefault()
+    dispatch(recievedName(searchItem))
+   }
 
   useEffect(() => {
     const changeBackground = () => {
@@ -32,13 +47,18 @@ export default function Header() {
         setNavBar(false);
       }
     };
-    if (location.pathname != "/") {
-      setNavBar(true);
-      window.removeEventListener("scroll", changeBackground);
-    } else {
+    
+    if((formSubmitted||location.pathname=='/job')){
+      navigation('/job')
+      
+        setNavBar(true);
+        window.removeEventListener("scroll", changeBackground);  
+    }else{
       window.addEventListener("scroll", changeBackground);
     }
-  }, [navBar]);
+    
+   
+  }, [navBar,formSubmitted]);
 
   return (
     <div className="main">
@@ -83,12 +103,15 @@ export default function Header() {
                     </div>
                   </div>
                   <div className="header-search">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div className="search-form sm:hidden  lg:block">
                         <span>
                           <input
+                            style={{color:'#000'}}
+                            value={searchItem}
+                            onChange={handleChange}
                             type="search"
-                            name="resultParams"
+                            name="search"
                             className={navBar ? "inp-active" : "inp"}
                             placeholder="Find Services"
                           />
@@ -126,6 +149,7 @@ export default function Header() {
                         }}
                         className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
                       >
+
                         Join
                       </button>
                     </li>

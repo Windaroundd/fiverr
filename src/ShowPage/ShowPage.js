@@ -21,10 +21,15 @@ export default function ShowPage() {
     console.log(`switch to ${checked}`);
   };
   const [itemDetail, setItemDetail] = useState([]);
+  const [itemName,setItemName]=useState()
+  const [itemId,setItemId] =useState()
   // this will cause too many re-render problems if have more than 1 local state and setState inside mapping
   const idItem = useSelector((state) => {
     return state.headerItem.id;
   });
+  const nameItem = useSelector((state) => { 
+  return state.searchItem.name
+   })
 
   const createStar = (starReview) => {
     switch (starReview) {
@@ -81,11 +86,11 @@ export default function ShowPage() {
             <Meta
               className="text-left mb-0 font-semibold"
               avatar={<Avatar src={i.avatar} />}
-              title={i.tenNguoiTao}
+              title={<>{i.tenNguoiTao}</>}
               description={`Level: ${i.congViec.saoCongViec} Seller`}
             />
             <div className="text-left">
-              <p className="job-description py-4 font-semibold text-base">
+              <p className="job-description  py-4 font-semibold text-base">
                 {i.congViec.tenCongViec}
               </p>
               {/* <span className="font-bold star-icon text-base mr-2">
@@ -117,19 +122,57 @@ export default function ShowPage() {
       );
     });
   };
-
-  useEffect(() => {
+  useEffect(() => { 
     window.scrollTo(0,0)
-    jobSevice
-      .getJobDetail(idItem)
+    if(idItem&&!nameItem){
+      jobSevice
+    .getJobDetail(idItem)
+    .then((res) => {
+      console.log(res.data.content);
+      setItemDetail(res.data.content);
+      setItemId(idItem)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    }else{
+      jobSevice.getJobAccordingToName(nameItem)
       .then((res) => {
-        console.log(res.data.content);
-        setItemDetail(res.data.content);
+        console.log(res);
+        setItemDetail(res.data.content)
+        setItemName(nameItem)
       })
       .catch((err) => {
         console.log(err);
-      });
-  }, [idItem]);
+           });
+    }
+   },[])
+  useEffect(() => {
+   if(nameItem!=itemName){
+    console.log('itemName: ', itemName);
+    console.log('nameItem: ', nameItem);
+    jobSevice.getJobAccordingToName(nameItem)
+     .then((res) => {
+       console.log(res);
+       setItemDetail(res.data.content)
+       setItemName(nameItem)
+     })
+     .catch((err) => {
+       console.log(err);
+          });
+   }else{
+    jobSevice
+    .getJobDetail(idItem)
+    .then((res) => {
+      console.log(res.data.content);
+      setItemDetail(res.data.content);
+      setItemId(idItem)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+   }
+  }, [idItem,nameItem]);
   return (
     <div style={{ zIndex: "50" }} className="w-full show-page py-40">
       <div className="show-banner space-y-8">
