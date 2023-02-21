@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postRegister } from "../../services/userService";
 import { Button, Form, Input, message, Select } from "antd";
 import { userLocalService } from "../../services/localService";
@@ -152,7 +152,6 @@ export default function RegisterPage() {
             rules={[
               {
                 required: true,
-                message: "Please input your gender!",
               },
             ]}
           >

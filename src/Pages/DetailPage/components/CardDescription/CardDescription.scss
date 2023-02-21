@@ -1,0 +1,18 @@
+.description-wrapper {
+    padding-bottom: 20px;
+    position: relative;
+
+    .description-content {
+        word-wrap: break-word;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #62646a;
+        overflow: hidden;
+        word-break: break-word;
+
+        u {
+            background: #ffecd1;
+            text-decoration: none;
+        }
+    }
+}
