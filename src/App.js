@@ -1,23 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage/HomePage";
+import Layout from "./HOC/Layout";
+import ShowPage from "./ShowPage/ShowPage";
+import TitlePage from "./TitlePage/TitlePage";
+import DetailPage from "./Pages/DetailPage/DetailPage";
+import NotfoundPage from "./Pages/NotfoundPage/NotfoundPage";
+import LoginPage from "./Pages/LoginPage/LoginPage";
+import RegisterPage from "./Pages/RegisterPage/RegisterPage";
+import SellerPage from "./Pages/SellerPage/SellerPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <HomePage />
+              </Layout>
+            }
+          ></Route>
+          <Route
+            path="/job"
+            element={
+              <Layout>
+                <ShowPage />
+              </Layout>
+            }
+          ></Route>
+          <Route
+            path="/title"
+            element={
+              <Layout>
+                <TitlePage />
+              </Layout>
+            }
+          ></Route>
+          <Route
+            path="/detail/:id"
+            element={
+              <Layout>
+                <DetailPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/me"
+            element={
+              <Layout>
+                <SellerPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Layout>
+                <RegisterPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <Layout>
+                <LoginPage />
+              </Layout>
+            }
+          />
+          <Route path="*" element={<NotfoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
