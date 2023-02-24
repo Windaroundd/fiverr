@@ -2,10 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Card } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import React from "react";
 import { jobSevice } from "./../services/jobService";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { recieveId } from "../redux-toolkit/headerItem";
+import { useNavigate } from 'react-router-dom';
+
 const { Meta } = Card;
 const buttonTitle =
   "w-50 bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded space-x-3 transition delay-75";
@@ -13,6 +17,13 @@ export default function TitlePage() {
   const filteredItem = useSelector((state) => {
     return state.itemTitleSlider.item;
   });
+  const navigation = useNavigate()
+  const dispatch = useDispatch()
+  const dispatchID = (id) => { 
+    dispatch(recieveId(id))
+    navigation('/job')
+   }
+  
   console.log("filteredItem: ", filteredItem);
   const [titleItem, setTitleItem] = useState([]);
   const [itemFilter, setItemFilter] = useState();
@@ -36,7 +47,7 @@ export default function TitlePage() {
   const mapDescription = (item) => { 
     return item?.map((des)=>{
       return <div className="py-1">
-      <p>{des.tenChiTiet}</p>
+      <button onClick={()=>{dispatchID(des.id)}} className="px-2 py-2 button-titlepage block rounded text-left">{des.tenChiTiet}</button>
       </div>
     })
    }
@@ -55,7 +66,7 @@ export default function TitlePage() {
             />
           }
         >
-          <Meta className="text-xl"  title={i.tenNhom} description={mapDescription(i?.dsChiTietLoai)} />
+          <Meta className="text-xl px-5 py-3"  title={i.tenNhom} description={mapDescription(i?.dsChiTietLoai)} />
         </Card>
       );
     });
@@ -69,7 +80,7 @@ export default function TitlePage() {
   // console.log('itemfilter',itemFilter.tenLoaiCongViec);
   return (
     <div className="w-full h-screen ">
-      <div className="show-title  space-y-8">
+      <div className="show-title  space-y-20">
         <div className="container mx-auto title-service  space-y-16">
           <div className="title-content  pt-32 flex flex-col justify-center items-center space-y-5">
             <h1 className="text-xl font-medium">

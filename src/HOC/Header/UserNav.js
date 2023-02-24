@@ -18,57 +18,61 @@ export default function UserNav() {
     if (userLogin) {
       return (
         <div className="user">
-          <ul className="flex"><li className="pt-2">
-            <NavLink to={"/me"}>
-              <span className="font-semibold  text-slate-500 text-base ">
-                {userLogin?.user?.name}
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <button
-              onClick={handleLogout}
-              className=" ml-2 bg-transparent bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border rounded  hover:border-transparent"
-            >
-              Logout
-            </button>
-          </li></ul>
-          
+          <ul className="block md:flex">
+            <li className="pt-2 ml-1">
+              <NavLink to={"/me"}>
+                <span className="md:font-semibold font-extrabold text-2xl  text-slate-400 md:text-base ">
+                  {userLogin?.user?.name}
+                </span>
+              </NavLink>
+            </li>
+            <li className="mr-16 mt-2 text-white-700 font-semibold hover:text-white!important">
+              <button
+                onClick={handleLogout}
+                className=" ml-2 bg-transparent bg-green-400  py-2 px-4 border rounded  hover:border-transparent"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
         </div>
       );
     } else {
       return (
         <div>
           <div>
-            <li>
-              <button
-                className="text-xl cursor-pointer px-2 py-2 rounded text-black font-medium "
-                style={{
-                  border: "0",
-                }}
-                onClick={() => {
-                  window.location.href = "/signin";
-                }}
-              >
-                Sign in
-              </button>
-            </li>
-            <li>
-              <button
-                style={{
-                  borderRadius: "4px",
-                  transition: "0.5s",
-                  border: "1px solid #1dbf37",
-                  color: "#1dbf73",
-                }}
-                onClick={() => {
-                  window.location.href = "/signup";
-                }}
-                className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
-              >
-                Join
-              </button>
-            </li>
+            <ul className="md:flex block">
+             
+              <li>
+                <button
+                  className=" cursor-pointer px-2 py-2 rounded  md:font-medium md:text-xl text-2xl font-extrabold "
+                  style={{
+                    border: "0",
+                  }}
+                  onClick={() => {
+                    window.location.href = "/signin";
+                  }}
+                >
+                  Sign in
+                </button>
+              </li>
+              <li>
+                <button
+                  style={{
+                    borderRadius: "4px",
+                    transition: "0.5s",
+                    border: "1px solid #1dbf37",
+                    color: "#1dbf73",
+                  }}
+                  onClick={() => {
+                    window.location.href = "/signup";
+                  }}
+                  className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
+                >
+                  Join
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       );

@@ -29,8 +29,13 @@ export default function CardComment() {
 
   const onClickHandler = (e) => {
     e.preventDefault();
+    console.log({
+      maCongViec: Number(id),
+      maNguoiBinhLuan: user.id,
+      noiDung: value,
+    });
     jobSevice.createComment({
-      maCongViec: id,
+      maCongViec: Number(id),
       maNguoiBinhLuan: user.id,
       noiDung: value,
     });
@@ -47,8 +52,13 @@ export default function CardComment() {
               <CommentGroup>
                 <Comment>
                   <div className="flex my-5">
-                    <div><Comment.Avatar className="border rounded-full" src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg" /></div>
-                    
+                    <div>
+                      <Comment.Avatar
+                        className="border rounded-full"
+                        src="https://react.semantic-ui.com/images/avatar/small/jenny.jpg"
+                      />
+                    </div>
+
                     <div className="font-bold mt-8">
                       <Comment.Author>
                         <div className="id-commentator">

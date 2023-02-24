@@ -9,9 +9,9 @@ export const jobSevice = {
   getJobDetail: (id) => {
     return https.get(`api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/${id}`);
   },
-  getJobAccordingToName : (name) =>{
-    return https.get(`api/cong-viec/lay-danh-sach-cong-viec-theo-ten/${name}`)
-},
+  getJobAccordingToName: (name) => {
+    return https.get(`api/cong-viec/lay-danh-sach-cong-viec-theo-ten/${name}`);
+  },
 
   getDetailGig: (id) => {
     return https.get(`/api/cong-viec/lay-cong-viec-chi-tiet/${id}`);
@@ -26,10 +26,11 @@ export const jobSevice = {
   getClientComment: (id) => {
     return https.get(`/api/binh-luan/lay-binh-luan-theo-cong-viec/${id}`);
   },
-  createComment: (data) =>  https.post(`/api/binh-luan`, {
-      maCongViec: data.id,
-      maNguoiBinhLuan: data.userId,
-      noiDung: data.content,
+  createComment: (data) =>
+    https.post(`/api/binh-luan`, {
+      maCongViec: Number(data.maCongViec),
+      maNguoiBinhLuan: data.maNguoiBinhLuan,
+      noiDung: data.noiDung,
     }),
   getGigBySeller: () => {
     return https.get(
