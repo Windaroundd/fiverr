@@ -1,0 +1,19 @@
+.signup {
+    background-color: #eaefee;
+    padding-top: 250px;
+    border: thin;
+    padding-bottom: 50px;
+}
+
+.signup.signup-container {
+    border: 2px;
+
+}
+
+.continue-btn {
+    margin-right: 125px;
+}
+
+.continue-btn:hover {
+    color: white !important;
+}

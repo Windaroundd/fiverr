@@ -1,0 +1,199 @@
+.seller-card {
+    margin-bottom: 32px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #dadbdd;
+    padding: 30px;
+    font-size: 14px;
+    line-height: 130%;
+
+
+    .user-stats.with-border-top {
+        border-top: 1px solid #dadbdd;
+        margin-top: 24px;
+    }
+
+    .user-stats-card-seller {
+        li {
+            position: relative;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        padding-top: 20px;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .buttons-wrapper {
+
+        padding-top: 20px;
+        border-top: 1px solid #dadbdd;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .user-online-indicator.is-online {
+        position: absolute;
+        right: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .user-online-indicator {
+        border: 1px solid #1dbf73;
+        border-radius: 12px;
+        color: #1dbf73;
+        display: none;
+        margin-bottom: 5px;
+        padding: 0 6px;
+    }
+
+    .collect-package .icn-heart {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+
+        .heart-icon {
+            position: relative;
+            fill: #b5b6ba;
+            background: none;
+            border: none;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+
+    .seller-collect {
+        position: absolute;
+        z-index: 10;
+    }
+
+    .user-profile-image {
+        justify-content: center;
+        margin-bottom: 15px;
+        display: flex;
+
+        .profile-pict {
+            position: relative;
+
+            .profile-pict-img {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .user-profile-image .seller-collect {
+        position: absolute;
+        z-index: 10;
+    }
+
+    .collect-package {
+        display: flex
+    }
+
+    .ratings-wrapper {
+        padding-top: 5px;
+    }
+
+    .rating-text {
+        display: inline-block;
+    }
+
+    .username-line {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .oneliner-wrapper {
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+
+        .liner-and-pen {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+    }
+}
+
+.flex-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.orca-rating {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .stars {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        padding-bottom: 4px;
+    }
+}
+
+.orca-rating,
+.seller-card .controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}

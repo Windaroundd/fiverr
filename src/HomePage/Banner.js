@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper from "swiper";
 
 // Import Swiper styles
@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-import {  Autoplay,EffectFade, Pagination, Transition } from "swiper";
+import { Autoplay, EffectFade, Pagination, Transition } from "swiper";
 import { useEffect } from "react";
 import { useState } from "react";
-import { jobSevice } from './../services/jobService';
+import { jobSevice } from "../services/jobService";
 import { noAuto } from "@fortawesome/fontawesome-svg-core";
 import { useDispatch } from 'react-redux';
 import { recievedName } from "../redux-toolkit/searchItem";
@@ -31,10 +31,9 @@ export default function Banner() {
     
     setInput(event.target.value);
   };
-  const handleClick = async (event) => { 
-    await event.preventDefault() 
-    
-    dispatch(recievedName(input))
+  const handleClick =  (event) => { 
+     event.preventDefault() 
+        dispatch(recievedName(input))
     // window.location.href('/job')
     // history.push('/job')
 
@@ -53,8 +52,8 @@ export default function Banner() {
         EffectFade={true}
         loop={true}
         slidesPerView={1}
-        autoplay={{delay:5000}}
-        modules={[Autoplay,EffectFade]}
+        autoplay={{ delay: 5000 }}
+        modules={[Autoplay,  EffectFade]}
         className="mySwiper"
         
         // modules={[Pagination]}
@@ -81,41 +80,79 @@ export default function Banner() {
         <div className="search container">
           <div className="content ">
             <div className="searchLeft">
-              <h1>Find the perfect <i>freelance</i> services for your business</h1>
-  
+              <h1>
+                Find the perfect <i>freelance</i> services for your business
+              </h1>
+              
   <form onSubmit={handleClick} action="" role="search" className="flex form-carousel">
-    <input id='search' value={input} className="form-control rounded-l-lg" type="search" onChange={handleChange} name="input" placeholder="Try &quot;building mobile app&quote;" />
-    {/* <NavLink to='/job'> */}
+                <input
+                  id='search' value={input} className="form-control rounded-l-lg"
+                  type="search"
+                  onChange={handleChange} name="input"
+                  placeholder='Try "building mobile app&quote;'
+                />
+                {/* <NavLink to='/job'> */}
     <button type="submit"  className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-r-lg">
+                  
       
         Search
+                
       
 
     </button>
-  {/* </NavLink> */}
+              {/* </NavLink> */}
   </form>
- 
+             
   
   <div className="flex popular">
-    <span>Popular:</span>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
-      Website Design
-    </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
-      WordPress
-    </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
-      Logo Design
-    </div>
-    <div style={{borderRadius:'40px', transition:'0.5s', cursor:'pointer',fontSize:'14px'}} className={buttonBanner}>
-      Video Edditing
-    </div>
-  </div>
-
+                <span>Popular:</span>
+                <div
+                  style={{
+                    borderRadius: "40px",
+                    transition: "0.5s",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                  }}
+                  className={buttonBanner}
+                >
+                  Website Design
+                </div>
+                <div
+                  style={{
+                    borderRadius: "40px",
+                    transition: "0.5s",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                  }}
+                  className={buttonBanner}
+                >
+                  WordPress
+                </div>
+                <div
+                  style={{
+                    borderRadius: "40px",
+                    transition: "0.5s",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                  }}
+                  className={buttonBanner}
+                >
+                  Logo Design
+                </div>
+                <div
+                  style={{
+                    borderRadius: "40px",
+                    transition: "0.5s",
+                    cursor: "pointer",
+                    fontSize: "14px",
+                  }}
+                  className={buttonBanner}
+                >
+                  Video Edditing
+                </div>
+              </div>
             </div>
-            <div className="searchRight">
-        
-            </div>
+            <div className="searchRight"></div>
           </div>
         </div>
       </section>

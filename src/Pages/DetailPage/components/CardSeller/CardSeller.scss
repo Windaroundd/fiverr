@@ -1,0 +1,334 @@
+.notable-clients-about-local {
+    border-top: 1px solid #dadbdd;
+    display: none;
+
+    .notable-clients-title {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #222325;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        white-space: nowrap;
+    }
+
+    .tmELUJj,
+    .tmELUJj .vpfXdaJ {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+    }
+
+    .GX9XrIg {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background: #fff;
+        border-style: solid;
+        border-width: 1px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #fff;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        font-size: 10px;
+        font-weight: 700;
+        -webkit-justify-content: center;
+        justify-content: center;
+        line-height: 100%;
+        padding: 3px 7px 2px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+.orca-rating.color-yellow .rating-score {
+    color: #ffb33e;
+}
+
+.orca-rating .rating-score,
+.orca-rating .ratings-count {
+    padding-left: 4px;
+}
+
+
+.orca-rating.color-yellow .orca-star {
+    fill: #ffb33e;
+}
+
+.nFghBOe {
+    fill: #74767e;
+    background: none;
+    border: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-card {
+    -webkit-box-ordinal-group: 101;
+    -ms-flex-order: 100;
+    -webkit-order: 100;
+    order: 100;
+
+    ol,
+    ul {
+        list-style: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .seller-card {
+
+
+        line-height: 130%;
+        position: relative;
+
+        .profile-info {
+            padding-bottom: 24px;
+            display: flex;
+            align-items: center;
+
+            .seller-link {
+                color: #62646a;
+                display: block;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .one-liner {
+                margin: 0 !important;
+                text-align: left;
+            }
+
+            .orca-rating {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+
+                .stars {
+                    display: inline-flex;
+                    padding-bottom: 4px;
+                }
+            }
+
+            
+
+            .username-line {
+                -webkit-box-pack: normal;
+                -ms-flex-pack: normal;
+                -webkit-justify-content: normal;
+                justify-content: normal;
+                line-height: 20px;
+                padding-bottom: 5px;
+            }
+
+
+
+            .user-profile-label {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                -webkit-align-items: flex-start;
+                align-items: flex-start;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                padding-left: 15px;
+
+
+            }
+
+            .user-profile-image {
+                display: flex;
+
+                .profile-pict {
+                    position: relative;
+                    width: 110px;
+                    height: 110px;
+                    font-size: 2.2em;
+
+                    .profile-pict-img {
+                        border-radius: 50%;
+                        display: block;
+                        height: 100%;
+                        position: absolute;
+                        width: 100%;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .seller-desc {
+            border-top: 1px solid #dadbdd;
+            line-height: 150%;
+            margin: 0;
+            padding-top: 15px;
+            text-align: left;
+
+            .read-more {
+                background: none;
+                border: 0;
+                color: #446ee7;
+                display: block;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+
+            .inner {
+                max-height: 70px;
+                // overflow: hidden;
+                white-space: pre-line;
+            }
+        }
+
+        // .stats-desc {
+        //     border: 1px solid #dadbdd;
+        //     border-radius: 3px;
+        //     margin-top: 0;
+        //     padding: 24px;
+        // }
+
+        .user-stats-card {
+
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-flex-flow: row wrap;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+
+            li {
+                box-sizing: border-box;
+                color: #74767e;
+                padding-bottom: 16px;
+                width: 50%;
+            }
+
+            strong {
+                color: #62646a;
+                display: block;
+                padding-top: 4px;
+            }
+        }
+    }
+}
+
+.username-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.seller-link {
+    font-size: 14px;
+    
+    color: #222325;
+    text-align: center;
+    display: block;
+    padding-bottom: 10px;
+}
+
+  .heading {
+    font-size: 25px;
+    margin-right: 25px;
+  }
+  .voting.fa-5{
+    color: grey;
+  }
+  .fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  /* Place text to the right */
+  .right {
+    text-align: right;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+    border: 1px;
+    border-radius: 14px;
+  }
+  
+  /* Individual bars */
+  .bar-5 {width: 100%; height: 18px; background-color: orange; border-radius: 14px;}
+  .bar-4 {width: 30%; height: 18px;background-color: orange ; border-radius: 14px}
+  .bar-3 {width: 10%; height: 18px;background-color: orange; border-radius: 14px ;}
+  .bar-2 {width: 4%; height: 18px;background-color: orange; border-radius: 14px ;}
+  .bar-1 {width: 15%; height: 18px;background-color: orange; border-radius: 14px ;}
+  
+  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+  @media (max-width: 400px) {
+    .side, .middle {
+      width: 100%;
+    }
+    /* Hide the right column on small screens */
+    .right {
+      display: none;
+    }
+  }

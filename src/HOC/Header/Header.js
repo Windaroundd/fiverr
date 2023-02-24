@@ -1,8 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faGlobe, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { Form } from "react-router-dom";
+import {
+  faBars,
+  faGlobe,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
+import { Form, NavLink } from "react-router-dom";
 import ListItem from "./ListItem";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -10,12 +14,15 @@ import { recievedName } from "../../redux-toolkit/searchItem";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import UserNav from "./UserNav";
 export default function Header() {
-  const [searchItem,setSearchItem]= useState()
+  const [searchItem, setSearchItem] = useState();
   const location = useLocation();
-  const dispatch = useDispatch()
-  const navigation = useNavigate()
-  const formSubmitted = useSelector((state) => { return state.searchItem.formSubmitted })
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+  const formSubmitted = useSelector((state) => {
+    return state.searchItem.formSubmitted;
+  });
   const [navBar, setNavBar] = useState();
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +37,13 @@ export default function Header() {
     setSelectedOption(option);
     setIsOpen(false);
   };
-  const handleChange = (event) => { 
-    
-    setSearchItem(event.target.value)
-   }
-  const handleSubmit= async (e) => { 
-   await e.preventDefault()
-    dispatch(recievedName(searchItem))
-   }
+  const handleChange = (event) => {
+    setSearchItem(event.target.value);
+  };
+  const handleSubmit =  (e) => {
+     e.preventDefault();
+    dispatch(recievedName(searchItem));
+  };
 
   useEffect(() => {
     const changeBackground = () => {
@@ -110,7 +116,7 @@ export default function Header() {
                       <div className="search-form block">
                         <span className="flex">
                           <input
-                            style={{color:'#000'}}
+                            style={{ color: "#000" }}
                             value={searchItem}
                             onChange={handleChange}
                             type="search"
@@ -141,20 +147,9 @@ export default function Header() {
                     </li>
                     <li>US$ USD</li>
                     <li>Become a Seller</li>
-                    <li>Sign in</li>
+                    <UserNav />
                     <li>
-                      <button
-                        style={{
-                          borderRadius: "4px",
-                          transition: "0.5s",
-                          border: "1px solid #1dbf37",
-                          color: "#1dbf73",
-                        }}
-                        className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
-                      >
-
-                        Join
-                      </button>
+                      
                     </li>
                   </ul>
                 </div>
@@ -210,33 +205,35 @@ export default function Header() {
                     </div>
 
                     <div className="dropdown-toggle-show">
-                    <div className="dropdown px-6">
-                      <h1 className="selected-option"
-        onClick={() => setIsOpen(!isOpen)}>
-          <span className="mr-3">Helps and Resource</span>
-        <span><FontAwesomeIcon
-        icon={faChevronDown}
-        className="icon-down"
-        size="lg"/></span>
-        
-        </h1>
-      <div className="option-chosen">
-        {selectedOption}
-        
-      </div>
-      {isOpen && (
-        <ul className="options-list">
-          {options.map((option) => (
-            <li key={option} onClick={() => handleOptionChange(option)}>
-              {option}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+                      <div className="dropdown px-6">
+                        <h1
+                          className="selected-option"
+                          onClick={() => setIsOpen(!isOpen)}
+                        >
+                          <span className="mr-3">Helps and Resource</span>
+                          <span>
+                            <FontAwesomeIcon
+                              icon={faChevronDown}
+                              className="icon-down"
+                              size="lg"
+                            />
+                          </span>
+                        </h1>
+                        <div className="option-chosen">{selectedOption}</div>
+                        {isOpen && (
+                          <ul className="options-list">
+                            {options.map((option) => (
+                              <li
+                                key={option}
+                                onClick={() => handleOptionChange(option)}
+                              >
+                                {option}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     </div>
-                  
-                   
                   </div>
                 </div>
               </div>

@@ -13,6 +13,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
+import { NavLink } from "react-router-dom";
 const buttonStyle =
   "bg-transparent transition-all hover:bg-green-500  text-black-700 py-2 px-2 font-semibold hover:text-white border border-black hover:border-transparent rounded service-btn";
 const { Meta } = Card;
@@ -21,15 +22,15 @@ export default function ShowPage() {
     console.log(`switch to ${checked}`);
   };
   const [itemDetail, setItemDetail] = useState([]);
-  const [itemName,setItemName]=useState()
-  const [itemId,setItemId] =useState()
+  const [itemName, setItemName] = useState();
+  const [itemId, setItemId] = useState();
   // this will cause too many re-render problems if have more than 1 local state and setState inside mapping
   const idItem = useSelector((state) => {
     return state.headerItem.id;
   });
-  const nameItem = useSelector((state) => { 
-  return state.searchItem.name
-   })
+  const nameItem = useSelector((state) => {
+    return state.searchItem.name;
+  });
 
   const createStar = (starReview) => {
     switch (starReview) {
@@ -75,12 +76,12 @@ export default function ShowPage() {
   };
   const mapContent = (item) => {
     return item?.map((i) => {
+      console.log("i: ", i);
       return (
         <Card
           className=""
           style={{ width: 300 }}
           cover={<img alt="example" src={i.congViec.hinhAnh} />}
-       
         >
           <div className="card-body-item">
             <Meta
@@ -90,9 +91,11 @@ export default function ShowPage() {
               description={`Level: ${i.congViec.saoCongViec} Seller`}
             />
             <div className="text-left">
-              <p className="job-description  py-4 font-semibold text-base">
-                {i.congViec.tenCongViec}
-              </p>
+              <NavLink to={`/detail/${i.id}`}>
+                <p className="job-description  py-4 font-semibold text-base">
+                  {i.congViec.tenCongViec}
+                </p>
+              </NavLink>
               {/* <span className="font-bold star-icon text-base mr-2">
             Rating:
             </span> */}
@@ -122,57 +125,59 @@ export default function ShowPage() {
       );
     });
   };
-  useEffect(() => { 
-    window.scrollTo(0,0)
-    if(idItem&&!nameItem){
-      jobSevice
-    .getJobDetail(idItem)
-    .then((res) => {
-      console.log(res.data.content);
-      setItemDetail(res.data.content);
-      setItemId(idItem)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-    }else{
-      jobSevice.getJobAccordingToName(nameItem)
-      .then((res) => {
-        console.log(res);
-        setItemDetail(res.data.content)
-        setItemName(nameItem)
-      })
-      .catch((err) => {
-        console.log(err);
-           });
-    }
-   },[])
   useEffect(() => {
-   if(nameItem!=itemName){
-    console.log('itemName: ', itemName);
-    console.log('nameItem: ', nameItem);
-    jobSevice.getJobAccordingToName(nameItem)
-     .then((res) => {
-       console.log(res);
-       setItemDetail(res.data.content)
-       setItemName(nameItem)
-     })
-     .catch((err) => {
-       console.log(err);
-          });
-   }else{
-    jobSevice
-    .getJobDetail(idItem)
-    .then((res) => {
-      console.log(res.data.content);
-      setItemDetail(res.data.content);
-      setItemId(idItem)
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-   }
-  }, [idItem,nameItem]);
+    window.scrollTo(0, 0);
+    if (idItem && !nameItem) {
+      jobSevice
+        .getJobDetail(idItem)
+        .then((res) => {
+          console.log(res.data.content);
+          setItemDetail(res.data.content);
+          setItemId(idItem);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      jobSevice
+        .getJobAccordingToName(nameItem)
+        .then((res) => {
+          console.log(res);
+          setItemDetail(res.data.content);
+          setItemName(nameItem);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
+  useEffect(() => {
+    if (nameItem != itemName) {
+      console.log("itemName: ", itemName);
+      console.log("nameItem: ", nameItem);
+      jobSevice
+        .getJobAccordingToName(nameItem)
+        .then((res) => {
+          console.log(res);
+          setItemDetail(res.data.content);
+          setItemName(nameItem);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      jobSevice
+        .getJobDetail(idItem)
+        .then((res) => {
+          console.log(res.data.content);
+          setItemDetail(res.data.content);
+          setItemId(idItem);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [idItem, nameItem]);
   return (
     <div style={{ zIndex: "50" }} className="w-full show-page py-40">
       <div className="show-banner space-y-8">
@@ -262,11 +267,11 @@ export default function ShowPage() {
                 id="countries"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-               
-                <option selected value="relevance">Relevance</option>
+                <option selected value="relevance">
+                  Relevance
+                </option>
                 <option value="best-selling">Best Selling</option>
                 <option value="new-arrivals">New Arrivals</option>
-               
               </select>
             </div>
           </div>
