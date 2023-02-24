@@ -43,6 +43,7 @@ export default function Header() {
   const handleSubmit =  (e) => {
      e.preventDefault();
     dispatch(recievedName(searchItem));
+    // navigation('/job')
   };
 
   useEffect(() => {
@@ -54,20 +55,25 @@ export default function Header() {
       }
     };
     
-    if((formSubmitted||location.pathname!='/')){
-      window.removeEventListener("scroll",changeBackground);  
-      setNavBar(true);
-      navigation('/job')
-      
-    }else{
-      
-      window.addEventListener("scroll", changeBackground);
-    }
-    return () => {
-      window.removeEventListener('scroll', changeBackground);
-    };
-   
-  }, [navBar,formSubmitted]);
+    
+    
+    console.log('formSubmitted: ', formSubmitted);
+    console.log('location.pathname!="/": ', location.pathname!="/");
+   if(formSubmitted){
+     window.removeEventListener('scroll', changeBackground);
+     setNavBar(true);
+    // navigation('/job')
+
+   }else if(location.pathname!=="/"){
+    setNavBar(true);
+    window.removeEventListener("scroll",changeBackground);  
+   }else{
+    window.addEventListener("scroll", changeBackground);
+   }
+   return () => {
+    window.removeEventListener('scroll', changeBackground);
+  };
+  }, [formSubmitted,navBar]);
 
   return (
     <div className="main">
