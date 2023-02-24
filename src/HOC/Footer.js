@@ -21,8 +21,8 @@ export default function Footer() {
   return (
     <div className={paddingForTitle? "footer-fiver-title": "footer-fiver py-8"}>
       <div className="container mx-auto">
-        <div className="footer-content  lg:space-y-5 flex justify-between space-x-3">
-          <div className="footer-item px-4  text-left">
+        <div className="footer-content w-full  flex flex-col justify-center items-start sm:justify-between sm:flex-row sm:items-start  ">
+          <div className="footer-item lg:mr-5  text-left">
             <h1 className="font-bold py-2">Categories</h1>
             <div
               style={{ color: " #74767e" }}
@@ -62,7 +62,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="footer-item  lg:space-y-5  text-left">
+          <div className="footer-item  md:px-2  sm:pl-0 xl:space-y-5  text-left">
             <h1 className="font-bold py-2">About</h1>
             <div
               style={{ color: " #74767e" }}
@@ -74,6 +74,9 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href="">Press & News</a>
+                </li>
+                <li>
+                  <a href="">Partnerships</a>
                 </li>
                 <li>
                   <a href="">Privacy Policy</a>
@@ -91,7 +94,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-item support lg:space-y-5 space-y-3 text-left">
+          <div className="footer-item pr-10 md:pr-5 lg:space-y-5 space-y-3 text-left">
             <h1 className="font-bold py-2">Support</h1>
             <div
               style={{ color: " #74767e" }}
@@ -113,6 +116,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+          
 
           <div className="footer-item  lg:space-y-5 space-y-3 text-left">
             <h1 className="font-bold py-2">Community</h1>

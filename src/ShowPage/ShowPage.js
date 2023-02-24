@@ -79,7 +79,7 @@ export default function ShowPage() {
       console.log("i: ", i);
       return (
         <Card
-          className="card-showpage"
+          className=" w-full text-left md:w-1/3"
           // style={{ width: 300 }}
           cover={<img alt="example" src={i.congViec.hinhAnh} />}
         >
@@ -275,7 +275,7 @@ export default function ShowPage() {
               </select>
             </div>
           </div>
-          <div className="service-item block  lg:flex justify-start space-x-5">
+          <div className="service-item block mt-10 space-y-10 md:space-y-0 text-left  md:flex md:justify-center md:space-x-5 md:items-start">
             {mapContent(itemDetail)}
           </div>
         </div>
