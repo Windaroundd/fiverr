@@ -7,10 +7,20 @@ import { faPinterest } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faFemale } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+import { useState } from "react";
 export default function Footer() {
+  const location = useLocation()
+  const [paddingForTitle,setPaddingForTitle] = useState(false)
+  useEffect(() => { 
+    if(location.pathname="/title"){
+      return setPaddingForTitle(true)
+    }
+   },[])
   return (
-    <div style={{ marginTop: "0rem" }} className="footer-fiver py-8">
-      <div className="container mx-auto ">
+    <div className={paddingForTitle? "mt-96 footer-fiver": "footer-fiver py-8"}>
+      <div className="container mx-auto">
         <div className="footer-content  lg:space-y-5 flex justify-between space-x-3">
           <div className="footer-item px-4  text-left">
             <h1 className="font-bold py-2">Categories</h1>

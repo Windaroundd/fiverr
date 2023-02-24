@@ -275,7 +275,7 @@ export default function ShowPage() {
               </select>
             </div>
           </div>
-          <div className="service-item flex justify-start space-x-5">
+          <div className="service-item block  lg:flex justify-start space-x-5">
             {mapContent(itemDetail)}
           </div>
         </div>

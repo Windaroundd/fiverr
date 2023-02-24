@@ -568,6 +568,15 @@ transition: all 5s ease!important;
 .show-banner-service{
   font-family: 'Montserrat', sans-serif !important;
 }
+.button-titlepage{
+  transition: 0.1s all;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+.button-titlepage:hover{
+  background-color: #f5f5f5;
+}
 
 .ant-card .ant-card-meta-detail .ant-card-meta-title{
   margin-bottom: 0 !important;
