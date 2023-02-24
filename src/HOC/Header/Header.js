@@ -75,21 +75,22 @@ export default function Header() {
       <header className={navBar ? "header" : "header-active"}>
         <div className="header-wrapper">
           <div className="mx-auto container ">
-            <div className="header-row flex items-center justify-between">
+            <div className="header-row block md:flex items-center justify-between">
               <div className="left">
-                <div className="flex items-center space-x-5 justify-evenly  text-white">
+                <div className="inline-block justify-center items-center md:justify-start  md:flex  space-x-5  text-white">
+                  
+                  <div className="nm mb-5 space-y-8 justify-center items-end flex">
                   <FontAwesomeIcon
                     type="button"
-                    style={{ flexBasis: "40%" }}
-                    className=" sm:block md:block lg:hidden xl:hidden  bar-icon cursor-pointer"
+                    // style={{ flexBasis: "40%" }}
+                    className=" block lg:hidden bar-icon cursor-pointer"
                     icon={faBars}
                     size="xl"
                     id="baricon"
                     data-modal-target="top-left-modal"
                     data-modal-toggle="top-left-modal"
                   />
-                  <div className="nm">
-                    <div>
+                    <div className="ml-2">
                       <a aria-current="page" class="logo active" href="/">
                         <svg
                           width="89"

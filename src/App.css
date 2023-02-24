@@ -244,6 +244,9 @@ width: 80px;
 z-index: 4;
 
 }
+.card-showpage{
+width: 300px;
+}
 .footer-fiver-title{
   margin-top: 30rem;
   border-top: 1px solid rgba(197, 198, 201, .5);
@@ -891,6 +894,10 @@ width: 100%;
   .header-search{
     display: block;
   }
+  .header-row{
+    padding: 0;
+    margin: auto;
+  }
   .form-carousel,.popular{
    display: none;
   }
@@ -955,7 +962,10 @@ width: 100%;
 
   }
   .footer-content{
-    display: block;
+   width: 70%;
+   flex-wrap: wrap; 
+   justify-content: space-between;
+   padding: 7px 10px;
   }
   .main-categories-img{
     width: 30px;
@@ -1010,6 +1020,9 @@ width: 100%;
   }
   .header-search{
     display: block;
+  }
+  .container{
+    width: 90%;
   }
   .search .content{
     display: block;
