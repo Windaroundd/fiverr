@@ -15,7 +15,21 @@ export const jobSevice = {
   getGigBySellerId: (id) => {
     return https.get(`/api/thue-cong-viec/lay-danh-sach-da-thue/${id}`);
   },
+  // getDetailSeller,
   getDetailSeller: (id) => {
     return https.get(`/api/users/${id}`);
+  },
+  getClientComment: (id) => {
+    return https.get(`/api/binh-luan/lay-binh-luan-theo-cong-viec/${id}`);
+  },
+  createComment: (data) =>  https.post(`/api/binh-luan`, {
+      maCongViec: data.id,
+      maNguoiBinhLuan: data.userId,
+      noiDung: data.content,
+    }),
+  getGigBySeller: () => {
+    return https.get(
+      "https://fiverrnew.cybersoft.edu.vn/api/thue-cong-viec/lay-danh-sach-da-thue"
+    );
   },
 };

@@ -1,14 +1,50 @@
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faGlobe,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { Form, NavLink } from "react-router-dom";
 import ListItem from "./ListItem";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { recievedName } from "../../redux-toolkit/searchItem";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import UserNav from "./UserNav";
 export default function Header() {
+  const [searchItem, setSearchItem] = useState();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+  const formSubmitted = useSelector((state) => {
+    return state.searchItem.formSubmitted;
+  });
   const [navBar, setNavBar] = useState();
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const options = [
+    "Help Center",
+    "Fiverr Forum",
+    "Fiver Blogs",
+    "Ask the Community",
+    "Contact Support",
+  ];
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
+  const handleChange = (event) => {
+    setSearchItem(event.target.value);
+  };
+  const handleSubmit =  (e) => {
+     e.preventDefault();
+    dispatch(recievedName(searchItem));
+  };
+
   useEffect(() => {
     const changeBackground = () => {
       if (window.scrollY >= 10) {
@@ -17,13 +53,16 @@ export default function Header() {
         setNavBar(false);
       }
     };
-    if (location.pathname != "/") {
+
+    if (formSubmitted || location.pathname == "/job") {
+      navigation("/job");
+
       setNavBar(true);
       window.removeEventListener("scroll", changeBackground);
     } else {
       window.addEventListener("scroll", changeBackground);
     }
-  }, [navBar]);
+  }, [navBar, formSubmitted]);
 
   return (
     <div className="main">
@@ -32,12 +71,16 @@ export default function Header() {
           <div className="mx-auto container ">
             <div className="header-row flex items-center justify-between">
               <div className="left">
-                <div className="flex items-center  text-white">
+                <div className="flex items-center space-x-5 justify-evenly  text-white">
                   <FontAwesomeIcon
-                    className="hidden"
+                    type="button"
+                    style={{ flexBasis: "40%" }}
+                    className=" sm:block md:block lg:hidden xl:hidden  bar-icon cursor-pointer"
                     icon={faBars}
-                    size="1x"
+                    size="xl"
                     id="baricon"
+                    data-modal-target="top-left-modal"
+                    data-modal-toggle="top-left-modal"
                   />
                   <div className="nm">
                     <div>
@@ -64,12 +107,15 @@ export default function Header() {
                     </div>
                   </div>
                   <div className="header-search">
-                    <form>
-                      <div className="search-form">
+                    <form onSubmit={handleSubmit}>
+                      <div className="search-form sm:hidden  lg:block">
                         <span>
                           <input
+                            style={{ color: "#000" }}
+                            value={searchItem}
+                            onChange={handleChange}
                             type="search"
-                            name="resultParams"
+                            name="search"
                             className={navBar ? "inp-active" : "inp"}
                             placeholder="Find Services"
                           />
@@ -82,7 +128,7 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div className="right">
+              <div className="right invisible xl:visible">
                 <div className="">
                   <ul className="flex items-center justify-around cursor-pointer text-white">
                     <li>Fiverr Business</li>
@@ -96,25 +142,94 @@ export default function Header() {
                     </li>
                     <li>US$ USD</li>
                     <li>Become a Seller</li>
+                    <UserNav />
                     <li>
-                      <NavLink to="/signin">Signin</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/signup">
-                        <button
-                          style={{
-                            borderRadius: "4px",
-                            transition: "0.5s",
-                            border: "1px solid #1dbf37",
-                            color: "#1dbf73",
-                          }}
-                          className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
-                        >
-                          Join
-                        </button>
-                      </NavLink>
+                      
                     </li>
                   </ul>
+                </div>
+              </div>
+
+              <div
+                id="top-left-modal"
+                data-modal-placement="top-left"
+                tabIndex={-1}
+                className="fixed top-0 left-0 right-0 z-50 hidden w-full pr-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen md:h-screen"
+              >
+                <div
+                  style={{ width: "100vw" }}
+                  className="relative sm:w-auto h-screen max-w-2xl md:h-screen"
+                >
+                  {/* Modal content */}
+                  <div className="relative bg-white md:w-96 sm:w-auto h-full rounded-lg shadow dark:bg-gray-700">
+                    {/* Modal header */}
+                    <div className="flex items-center justify-between p-5 rounded-t dark:border-gray-600">
+                      <button className="text-xl cursor-pointer px-20 py-2 rounded text-white bg-green-400 font-medium dark:text-white">
+                        Sign in
+                      </button>
+                      <button
+                        type="button"
+                        className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="top-left-modal"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="sr-only">Close modal</span>
+                      </button>
+                    </div>
+                    {/* Modal body */}
+                    <div className="px-6 space-y-6">
+                      <ul className="nav-bar-responsive">
+                        <li className="active">Fiver Pro</li>
+                        <li>Explore</li>
+                        <li>Messages</li>
+                        <li>List</li>
+                        <li>Orders</li>
+                      </ul>
+                    </div>
+
+                    <div className="dropdown-toggle-show">
+                      <div className="dropdown px-6">
+                        <h1
+                          className="selected-option"
+                          onClick={() => setIsOpen(!isOpen)}
+                        >
+                          <span className="mr-3">Helps and Resource</span>
+                          <span>
+                            <FontAwesomeIcon
+                              icon={faChevronDown}
+                              className="icon-down"
+                              size="lg"
+                            />
+                          </span>
+                        </h1>
+                        <div className="option-chosen">{selectedOption}</div>
+                        {isOpen && (
+                          <ul className="options-list">
+                            {options.map((option) => (
+                              <li
+                                key={option}
+                                onClick={() => handleOptionChange(option)}
+                              >
+                                {option}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

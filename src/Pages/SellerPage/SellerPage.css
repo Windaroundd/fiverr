@@ -1,0 +1,11 @@
+.container-profile{
+    padding-top: 200px;
+    background-color: rgb(228, 232, 232);
+}
+.seller-profile{
+    background-color: #ffff;
+}
+.gig-item{
+    padding: 10px;
+    background-color: #fff;
+}

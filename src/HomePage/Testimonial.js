@@ -2,10 +2,11 @@ import React from "react";
 
 export default function Testimonial() {
   return (
-    <div className="container  mx-auto">
-      <h2 className="text-4xl text-left">Explore the market</h2>
+    <div className="testimonial">
+      <div className="container px-7 mx-auto">
+      <h2 className=" text-2xl lg:text-4xl text-left">Explore the market</h2>
       <ul className="grid place-items-center grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6 justify-center">
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -16,7 +17,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -27,7 +28,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -38,7 +39,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -50,7 +51,7 @@ export default function Testimonial() {
           <p>Graphic & Design</p>
         </li>
 
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -61,7 +62,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4 ">
+        <li className="text-sm lg:text-xl py-4 ">
           <span className="categories">
             <img 
               className="main-categories-img"
@@ -72,7 +73,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -83,7 +84,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -94,7 +95,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -105,7 +106,7 @@ export default function Testimonial() {
           </span>
           <p>Graphic & Design</p>
         </li>
-        <li className="text-xl py-4">
+        <li className="text-sm lg:text-xl py-4">
           <span className="categories">
             <img
               className="main-categories-img"
@@ -117,6 +118,8 @@ export default function Testimonial() {
           <p>Graphic & Design</p>
         </li>
       </ul>
+      </div>
+     
     </div>
   );
 }

@@ -1,60 +1,34 @@
 import { RiStarSFill } from "react-icons/ri";
-import CardDescription from "../CardDescription";
+// import CardDescription from "../CardDescription";
 import CardNavbar from "../CardNavbar/CardNavbar";
 import CardSeller from "../CardSeller";
-import { Slide } from "react-slideshow-image";
-
-const slideImages = [
-  {
-    url: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    caption: "Slide 1",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    caption: "Slide 2",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    caption: "Slide 3",
-  },
-];
-
-const divStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundSize: "cover",
-  height: "400px",
-};
+import ReactDOM from "react-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./CardOver.css";
 
 const CardOverview = ({
-  title,
-  avatar,
-  author,
-  level,
-  viewer,
-  orders,
   navbar,
-  image,
   // nhận props
   detail,
 }) => {
-  console.log("card", detail);
+  const onChange = (currentSlide) => {};
+
   return (
     <>
-      <CardNavbar navbar={navbar} />
+      <CardNavbar navbar={navbar} detail={detail} />
       <div id="cartTitle">
         <h1
           id="title"
           className="mb-10 text-3xl font-semibold text-black text-left"
         >
           {detail?.congViec.tenCongViec}
-          {/*  */}
         </h1>
         <div id="cartRating" className="flex items-center">
-          
-          <img src={detail?.congViec.avatar} alt="" className="avatar-image" />
-          <h4>imohsinalii</h4>
+          <img src={detail?.avatar} alt="" className="avatar-image" />
+          <h4>{detail?.tenNguoiTao}</h4>
           <p>Top Rated Seller</p>
           <div className="flex items-center">
             <RiStarSFill size={20} color="#ffb33e" />
@@ -63,22 +37,27 @@ const CardOverview = ({
             <RiStarSFill size={20} color="#ffb33e" />
             <RiStarSFill size={20} color="#ffb33e" />
           </div>
-          <p>({viewer?.toString() || 0})</p>
-          <p>{orders?.toString() || 0} Orders in Queue</p>
+          <p>({detail?.congViec?.danhGia})</p>
+          <p>5 Orders in Queue</p>
         </div>
       </div>
-      <div
-        id="cartMiddle
-      "
-      >
-       
-        <Slide>
-          <div className="h-auto">
-            <button>
-              <img src={detail?.congViec.hinhAnh} alt="image" />
-            </button>
+      <div className="flex py-5">
+        <span>
+          <FontAwesomeIcon icon="fa-duotone fa-trophy-star" />
+        </span>
+      </div>
+      <div className="">
+        <Carousel className="slide-image" autoPlay={true} infiniteLoop={true}>
+          <div>
+            <img src={detail?.congViec.hinhAnh} />
           </div>
-        </Slide>
+          <div>
+            <img src={detail?.congViec.hinhAnh} />
+          </div>
+          <div>
+            <img src={detail?.congViec.hinhAnh} />
+          </div>
+        </Carousel>
       </div>
     </>
   );

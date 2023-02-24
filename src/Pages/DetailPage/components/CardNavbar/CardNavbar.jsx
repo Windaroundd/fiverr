@@ -7,15 +7,15 @@ export default function CardNavbar({ navbar, detail }) {
       <ul className="flex items-center">
         <li className="flex items-center">
           <span className="category-breadcrumbs ">
-            <a href="#">{detail?.congViec?.tenLoaiCongViec}</a>
+            <a href="#">{detail?.tenLoaiCongViec}</a>
           </span>
           <RiArrowDropRightLine size={30} />
           <span className="category-breadcrumbs ">
-            <a href="#">{detail?.congViec?.tenNhomChiTietLoai}</a>
+            <a href="#">{detail?.tenNhomChiTietLoai}</a>
           </span>
           <RiArrowDropRightLine size={30} />
           <span className="category-breadcrumbs ">
-            <a href="#">{detail?.congViec?.tenChiTietLoai}</a>
+            <a href="#">{detail?.tenChiTietLoai}</a>
           </span>
         </li>
       </ul>

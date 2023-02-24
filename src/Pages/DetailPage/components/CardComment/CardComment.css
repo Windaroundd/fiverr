@@ -1,3 +1,9 @@
-.avatar-custom{
-    border-radius: 40%;
+
+.avatar-commentator{
+    width: 50%;
+    height: 50px;
+}
+.id-commentator{
+    size: 30px;
+
 }

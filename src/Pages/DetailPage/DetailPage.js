@@ -18,7 +18,7 @@ export default function DetailPage() {
     jobSevice.getDetailGig(id).then((data) => {
       if (data.status === 200) setDetail(data.data.content[0]);
     });
-    // deps này dùng để khi đổi trang , id thay đổi hook này sẽ được gọi lại
+  //  
   }, [id]);
 
   return (
@@ -28,27 +28,23 @@ export default function DetailPage() {
           <CardOverview
             image=""
             title=""
-            author="Alice"
-            level="5"
-            viewer="250"
-            orders="12 Orrders in Queue"
+            author=""
+            level=""
+            viewer=""
+            orders=""
             navbar=""
             // props truyền xuống 
             detail={detail}
           />
-          <CardDescription />
-          <CardSeller />
+          <CardDescription detail={detail}/>
+          <CardSeller detail={detail}/>
           <CardComment />
         </div>
         <div id="cartTabs">
           <CardTabLabel />
           <div id="tab-content">
             <CardContent
-            // type="basic"
-            // active={true}
-            // title={"🔥 Basic Affiliate Website"}
-            // price="1,000"
-            // description="Gold (Potential 4 figure Sales) Amazing Shopify Store + Research + Basic Theme + 5 Products + Policy Pages + Order Tracking"
+           detail={detail}
             />
           </div>
         </div>

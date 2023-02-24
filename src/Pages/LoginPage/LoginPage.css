@@ -1,30 +1,20 @@
-.signin-page {
-  background-color: rgb(121, 170, 127);
-  background-size: cover;
-  background-repeat: none;
-  /* background-position:bottom ; */
-  position: relative;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  padding: 200px 0 60px 600px;
+.login-page {
+ background-color: #eaefee;
+ padding-top: 150px;
+ padding-bottom: 50px;
+ /* border: 1px solid; */
+
 }
-.signin-pakage {
-  background-color: aliceblue;
-  border-radius: 5px;
-  max-width: 400px;
-  position: absolute;
-  bottom: auto;
-  left: auto;
-  position: relative;
-  right: auto;
-  top: auto;
+.login-content{
+  box-sizing: 5px 5px 5px 0 yellow;
+  /* border: 1px solid; */
 }
 
 .main-content .input {
   border-radius: 5px;
 }
 .continue-signin {
+  margin-right: 125px;
   background-color: #1dbf73;
 }
 .continue-signin:hover {

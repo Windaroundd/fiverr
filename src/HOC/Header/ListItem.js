@@ -5,12 +5,14 @@ import { jobSevice } from "./../../services/jobService";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { recieveId } from "../../redux-toolkit/headerItem";
+import { recievedItem } from "../../redux-toolkit/itemTitleSlider";
 
 export default function ListItem() {
   const [item, setItem] = useState([]);
   const dispatch = useDispatch();
   const [jobDetail, setJobDetail] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
+  
   useEffect(() => {
     jobSevice
       .getJobCategory()
@@ -24,7 +26,13 @@ export default function ListItem() {
 
   const dispatchItem = (id) => {
     dispatch(recieveId(id));
+    // window.location.href('/title')
   };
+
+  const dispatchItemSlider = (item) => { 
+    dispatch(recievedItem(item))
+  
+   }
 
   //   console.log("event: ", event);
   //   const element_id = event.target.id;
@@ -90,14 +98,19 @@ export default function ListItem() {
         <>
           <ul className="space-x-3 cursor-pointer job-item">
             <li id="job-item-li" className="job-item-li">
-              <h1
+            <NavLink to={'/title'}>
+            <h1
+                onClick={() => { dispatchItemSlider(filterItem) }}
                 onMouseOver={() => {
                   filter(item.id);
                 }}
                 className="job-category"
               >
+                
                 {item.tenLoaiCongViec}
               </h1>
+            </NavLink>
+             
               <div id="job-detail" className="job-detail space-x-3 delay-150">
                 {/* container item-detail mx-auto" */}
                 <div className="container mx-auto text-left transition-all delay-500">

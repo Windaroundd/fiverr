@@ -5,8 +5,18 @@ import {
   RiCheckLine,
   RiArrowRightLine,
 } from "react-icons/ri";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const CardContent = () => {
+const CardContent = ({ detail }) => {
+  const {userLogin} = useSelector(state => state.userSliceLogin)
+  const navigate = useNavigate()
+  const handleSubmit = () => {
+    if(!userLogin)
+    return navigate('/signin')
+
+    console.log('submit')
+  }
   return (
     <div id="9">
       <div className="header-default">
@@ -19,11 +29,7 @@ const CardContent = () => {
           </div>
         </h4>
         <div className="text-left">
-          <span>✔️ Video Under 3 minutes</span>
-          <br />
-          <span>✔️ Video HD 720p</span>
-          <br />
-          <span>✔️ Editing the video according to your wishes</span>
+          <span>{detail?.congViec?.moTaNgan}</span>
         </div>
       </div>
       <div className="flex mt-10">
@@ -60,10 +66,12 @@ const CardContent = () => {
           </li>
         </ul>
       </div>
-      <button className="cart-continue-btn">
-        Continue
-        <RiArrowRightLine />
-      </button>
+      <div className="flex">
+        <button className="cart-continue-btn" onClick={handleSubmit}>
+          Continue {detail?.congViec?.giaTien} $
+        </button>
+        <span></span>
+      </div>
       <button className="cart-compare-btn">Compare Pakages</button>
     </div>
   );

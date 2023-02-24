@@ -1,16 +1,16 @@
 import React from "react";
 import "./CardDescription.scss";
 
-export default function CardDescription() {
+export default function CardDescription({detail}) {
   return (
     <div id="cartAbout">
       <header>
-        <h2 className="section-title">About This Gig</h2>
+        <h2 className="section-title font-bold text-xl py-5">About This Gig</h2>
       </header>
       <div className="description-wrapper">
-        <span style={{ fontSize: 0 }} />
+        <span></span>
         <div className="description-content" data-impression-collected="true">
-          <p>I will do professional video editing and post</p>
+          <p>{detail?.congViec.moTa}</p>
           <br />
           <p>
             Please contact me before placing your order. This will help avoid

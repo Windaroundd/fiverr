@@ -9,6 +9,7 @@ import DetailPage from "./Pages/DetailPage/DetailPage";
 import NotfoundPage from "./Pages/NotfoundPage/NotfoundPage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
+import SellerPage from "./Pages/SellerPage/SellerPage";
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
             element={
               <Layout>
                 <DetailPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/me"
+            element={
+              <Layout>
+                <SellerPage />
               </Layout>
             }
           />

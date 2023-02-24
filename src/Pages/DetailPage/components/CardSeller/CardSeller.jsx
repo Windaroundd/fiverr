@@ -9,13 +9,13 @@ import {
 import "./CardSeller.scss";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
-export default function CardSeller({ seller }) {
+export default function CardSeller({ detail }) {
   return (
     <div>
       <div>
         <h2 className="text-2xl pt-6 text-left pb-5 font-bold ">
           <span>About The Seller</span>
-        </h2>{" "}
+        </h2>
         <div className="profile-card">
           <div className="seller-card">
             <div className="profile-info">
@@ -26,7 +26,7 @@ export default function CardSeller({ seller }) {
                   htmlFor="profile_image_6613816671760"
                 >
                   <img
-                    src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1382af2b0f012a19977852e2a18b5f0f-1668530161680/dc77d2a6-d7c7-4640-9e43-dd541fabc4ea.jpeg"
+                    src={detail?.avatar}
                     className="profile-pict-img"
                     alt="stylishwebs"
                   />
@@ -40,13 +40,7 @@ export default function CardSeller({ seller }) {
 
               <div className="user-profile-label mb-0">
                 <div className="username-line mb-0">
-                  <a
-                    href=""
-                    className="seller-link "
-                    style={{ paddingBottom: 0 }}
-                  >
-                    Alice
-                  </a>
+                  <p>{detail?.congViec?.nguoiTao}</p>
                 </div>
                 <div className="one-liner-rating-wrapper">
                   <p className="one-liner">Email</p>
