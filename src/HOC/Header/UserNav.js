@@ -37,7 +37,7 @@ export default function UserNav() {
         <div >
           <div >
             <button
-              className="text-xl cursor-pointer px-2 py-2 rounded text-white font-medium "
+              className="text-xl cursor-pointer px-2 py-2 rounded text-black font-medium "
               style={{
                 border: "0",
               }}
@@ -61,31 +61,7 @@ export default function UserNav() {
             >
               Join
             </button>
-            {/* <button
-            style={{
-              border: "0",
-            }}
-            onClick={() => {
-              window.location.href = "/signin";
-            }}
-            className="border-2 border-red-500 px-5 py-2 rounded hover:text-red-500 font-medium"
-          >
-            <li>Signin</li>
-          </button> */}
-            {/* <button
-            style={{
-              borderRadius: "4px",
-              transition: "0.5s",
-              border: "1px solid #1dbf37",
-              color: "#1dbf73",
-            }}
-            onClick={() => {
-              window.location.href = "/signup";
-            }}
-            className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent"
-          >
-            Join
-          </button> */}
+           
           </div>
         </div>
       );
