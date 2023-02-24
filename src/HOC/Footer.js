@@ -14,12 +14,12 @@ export default function Footer() {
   const location = useLocation()
   const [paddingForTitle,setPaddingForTitle] = useState(false)
   useEffect(() => { 
-    if(location.pathname="/title"){
+    if(location.pathname === "/title"){
       return setPaddingForTitle(true)
     }
-   },[])
+   },[location])
   return (
-    <div className={paddingForTitle? "mt-96 footer-fiver": "footer-fiver py-8"}>
+    <div className={paddingForTitle? "footer-fiver-title": "footer-fiver py-8"}>
       <div className="container mx-auto">
         <div className="footer-content  lg:space-y-5 flex justify-between space-x-3">
           <div className="footer-item px-4  text-left">

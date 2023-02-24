@@ -79,8 +79,8 @@ export default function ShowPage() {
       console.log("i: ", i);
       return (
         <Card
-          className=""
-          style={{ width: 300 }}
+          className="card-showpage"
+          // style={{ width: 300 }}
           cover={<img alt="example" src={i.congViec.hinhAnh} />}
         >
           <div className="card-body-item">
@@ -181,9 +181,9 @@ export default function ShowPage() {
   return (
     <div style={{ zIndex: "50" }} className="w-full show-page py-40">
       <div className="show-banner space-y-8">
-        <div className="container mx-auto show-banner-service space-y-3">
+        <div className="container hidden xl:block mx-auto show-banner-service space-y-3">
           <h1 className="font-bold text-3xl text-left">Result for "html"</h1>
-          <div className="service flex justify-between">
+          <div className="service  flex justify-between">
             <div
               style={{ marginTop: "10px" }}
               className="left-show-banner flex space-x-4  justify-evenly"

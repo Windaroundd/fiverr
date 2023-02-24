@@ -244,9 +244,13 @@ width: 80px;
 z-index: 4;
 
 }
-
+.footer-fiver-title{
+  margin-top: 30rem;
+  border-top: 1px solid rgba(197, 198, 201, .5);
+}
 .footer-fiver,.footer-bottom{
   border-top: 1px solid rgba(197, 198, 201, .5);
+  margin-top: 5rem;
 }
 .copy-write{
   color: #b5b6ba;

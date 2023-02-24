@@ -58,21 +58,21 @@ export default function Header() {
     
     
     console.log('formSubmitted: ', formSubmitted);
-    console.log('location.pathname!="/": ', location.pathname!="/");
+    console.log('location.pathname!="/": ', location.pathname);
    if(formSubmitted){
-     window.removeEventListener('scroll', changeBackground);
      setNavBar(true);
+    return window.removeEventListener('scroll', changeBackground);
     // navigation('/job')
 
-   }else if(location.pathname!=="/"){
-    setNavBar(true);
-    window.removeEventListener("scroll",changeBackground);  
-   }else{
-    window.addEventListener("scroll", changeBackground);
+   }else if(location.pathname ==="/"){
+    //  setNavBar(false)
+    return window.addEventListener("scroll", changeBackground);
+     
+  }else{
+     setNavBar(true);
+    return window.removeEventListener("scroll",changeBackground);  
    }
-   return () => {
-    window.removeEventListener('scroll', changeBackground);
-  };
+ 
   }, [formSubmitted,navBar]);
 
   return (
