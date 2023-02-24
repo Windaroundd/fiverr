@@ -9,6 +9,10 @@ export const jobSevice = {
   getJobDetail: (id) => {
     return https.get(`api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/${id}`);
   },
+  getJobAccordingToName : (name) =>{
+    return https.get(`api/cong-viec/lay-danh-sach-cong-viec-theo-ten/${name}`)
+},
+
   getDetailGig: (id) => {
     return https.get(`/api/cong-viec/lay-cong-viec-chi-tiet/${id}`);
   },

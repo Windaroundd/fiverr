@@ -139,11 +139,7 @@ export default function RegisterPage() {
             <Form.Item
               label="Birthday"
               name="birthday"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
+              
             >
               <Space direction="vertical" size={12}>
                 <DatePicker

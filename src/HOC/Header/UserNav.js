@@ -17,51 +17,58 @@ export default function UserNav() {
   const renderContent = () => {
     if (userLogin) {
       return (
-        <div>
-          <NavLink to={"/me"}>
-            <span className="font-medium text-slate-500">
-            {userLogin?.user?.name}
-          </span>
-          </NavLink>
+        <div className="user">
+          <ul className="flex"><li className="pt-2">
+            <NavLink to={"/me"}>
+              <span className="font-semibold  text-slate-500 text-base ">
+                {userLogin?.user?.name}
+              </span>
+            </NavLink>
+          </li>
+          <li>
+            <button
+              onClick={handleLogout}
+              className=" ml-2 bg-transparent bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border rounded  hover:border-transparent"
+            >
+              Logout
+            </button>
+          </li></ul>
           
-          <button
-            onClick={handleLogout}
-            className=" ml-2 bg-transparent bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border rounded  hover:border-transparent"
-          >
-            Logout
-          </button>
         </div>
       );
     } else {
       return (
-        <div >
-          <div >
-            <button
-              className="text-xl cursor-pointer px-2 py-2 rounded text-black font-medium "
-              style={{
-                border: "0",
-              }}
-              onClick={() => {
-                window.location.href = "/signin";
-              }}
-            >
-              <li> Sign in</li>
-            </button>
-            <button
-              style={{
-                borderRadius: "4px",
-                transition: "0.5s",
-                border: "1px solid #1dbf37",
-                color: "#1dbf73",
-              }}
-              onClick={() => {
-                window.location.href = "/signup";
-              }}
-              className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
-            >
-              Join
-            </button>
-           
+        <div>
+          <div>
+            <li>
+              <button
+                className="text-xl cursor-pointer px-2 py-2 rounded text-black font-medium "
+                style={{
+                  border: "0",
+                }}
+                onClick={() => {
+                  window.location.href = "/signin";
+                }}
+              >
+                Sign in
+              </button>
+            </li>
+            <li>
+              <button
+                style={{
+                  borderRadius: "4px",
+                  transition: "0.5s",
+                  border: "1px solid #1dbf37",
+                  color: "#1dbf73",
+                }}
+                onClick={() => {
+                  window.location.href = "/signup";
+                }}
+                className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
+              >
+                Join
+              </button>
+            </li>
           </div>
         </div>
       );

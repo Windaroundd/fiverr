@@ -43,6 +43,7 @@ export default function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(recievedName(searchItem));
+    // navigation('/job')
   };
 
   useEffect(() => {
@@ -53,21 +54,23 @@ export default function Header() {
         setNavBar(false);
       }
     };
-    
-    if((formSubmitted||location.pathname!='/')){
-      window.removeEventListener("scroll",changeBackground);  
+
+    console.log("formSubmitted: ", formSubmitted);
+    console.log('location.pathname!="/": ', location.pathname != "/");
+    if (formSubmitted) {
+      window.removeEventListener("scroll", changeBackground);
       setNavBar(true);
       // navigation('/job')
-      
-    }else{
-      
+    } else if (location.pathname !== "/") {
+      setNavBar(true);
+      window.removeEventListener("scroll", changeBackground);
+    } else {
       window.addEventListener("scroll", changeBackground);
     }
     return () => {
-      window.removeEventListener('scroll', changeBackground);
+      window.removeEventListener("scroll", changeBackground);
     };
-   
-  }, [navBar,formSubmitted]);
+  }, [formSubmitted, navBar]);
 
   return (
     <div className="main">
@@ -147,31 +150,8 @@ export default function Header() {
                     </li>
                     <li>US$ USD</li>
                     <li>Become a Seller</li>
-                    {/* <li
-                      onClick={() => {
-                        window.location.href = "/signin";
-                      }}
-                    >
-                      Sign in
-                    </li>
-                    <li>
-                      <button
-                        style={{
-                          borderRadius: "4px",
-                          transition: "0.5s",
-                          border: "1px solid #1dbf37",
-                          color: "#1dbf73",
-                        }}
-                        className="button-join ml-2 bg-transparent hover:bg-green-400 text-white-700 font-semibold hover:text-white!important py-2 px-4 border  hover:border-transparent "
-                        onClick={() => {
-                          window.location.href = "/signup";
-                        }}
-                      >
-                        Join
-                      </button>
-                    </li> */}
+
                     <UserNav />
-                    <li></li>
                   </ul>
                 </div>
               </div>
@@ -190,9 +170,6 @@ export default function Header() {
                   <div className="relative bg-white md:w-96 sm:w-auto h-full rounded-lg shadow dark:bg-gray-700">
                     {/* Modal header */}
                     <div className="flex items-center justify-between p-5 rounded-t dark:border-gray-600">
-                      {/* <button className="text-xl cursor-pointer px-20 py-2 rounded text-white bg-green-400 font-medium dark:text-white">
-                        Sign in
-                      </button> */}
                       <UserNav />
                       <button
                         type="button"
@@ -264,7 +241,13 @@ export default function Header() {
         </div>
       </header>
       <hr />
-      <div className={navBar ? "show-list-item hidden lg:block" : "hide-list-item hidden lg:block"}>
+      <div
+        className={
+          navBar
+            ? "show-list-item hidden lg:block"
+            : "hide-list-item hidden lg:block"
+        }
+      >
         <ListItem />
       </div>
     </div>
