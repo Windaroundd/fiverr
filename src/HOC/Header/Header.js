@@ -53,16 +53,21 @@ export default function Header() {
         setNavBar(false);
       }
     };
-
-    if (formSubmitted || location.pathname == "/job") {
-      navigation("/job");
-
+    
+    if((formSubmitted||location.pathname!='/')){
+      window.removeEventListener("scroll",changeBackground);  
       setNavBar(true);
-      window.removeEventListener("scroll", changeBackground);
-    } else {
+      navigation('/job')
+      
+    }else{
+      
       window.addEventListener("scroll", changeBackground);
     }
-  }, [navBar, formSubmitted]);
+    return () => {
+      window.removeEventListener('scroll', changeBackground);
+    };
+   
+  }, [navBar,formSubmitted]);
 
   return (
     <div className="main">
@@ -108,8 +113,8 @@ export default function Header() {
                   </div>
                   <div className="header-search">
                     <form onSubmit={handleSubmit}>
-                      <div className="search-form sm:hidden  lg:block">
-                        <span>
+                      <div className="search-form block">
+                        <span className="flex">
                           <input
                             style={{ color: "#000" }}
                             value={searchItem}
@@ -259,7 +264,7 @@ export default function Header() {
         </div>
       </header>
       <hr />
-      <div className={navBar ? "show-list-item" : "hide-list-item"}>
+      <div className={navBar ? "show-list-item hidden lg:block" : "hide-list-item hidden lg:block"}>
         <ListItem />
       </div>
     </div>
