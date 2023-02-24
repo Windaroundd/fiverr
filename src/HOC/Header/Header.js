@@ -57,7 +57,7 @@ export default function Header() {
     if((formSubmitted||location.pathname!='/')){
       window.removeEventListener("scroll",changeBackground);  
       setNavBar(true);
-      navigation('/job')
+      // navigation('/job')
       
     }else{
       
