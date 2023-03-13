@@ -77,7 +77,7 @@ export default function Banner() {
         </SwiperSlide>
       </Swiper>
       <section className="slider-content mx-auto container">
-        <div className="search container">
+        <div className="search">
           <div className="content ">
             <div className="searchLeft">
               <h1>

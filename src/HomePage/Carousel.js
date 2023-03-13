@@ -64,7 +64,8 @@ export default function Carousel() {
   }
  
   return (
-    <div className="container mx-auto mb-20">
+    <div className="carousel">
+      <div className="container mx-auto mb-20">
       <Slider {...settings}>
         <div className="carousel-container">
           <div className="carousel-img">
@@ -224,6 +225,7 @@ export default function Carousel() {
        
       </Slider>
       <CarouselModal srcVideo={srcVideo} visible={carouselModal} handleOnClose={handleOnClose}/>
+    </div>
     </div>
   );
 }

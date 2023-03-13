@@ -13,7 +13,9 @@ html,body{
     padding: 0;
     overflow-x: hidden!important;
 }
-
+.container{
+  max-width: 1336px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -40,7 +42,8 @@ html,body{
 .slider-content{
   position: absolute;
   top: 200px;
-  left:10%;
+  padding-left: 40px;
+  /* left:10%; */
   color: #fff;
   z-index: 1;
  
@@ -108,8 +111,12 @@ html,body{
 /* .slick-slider.slick-initialized {
   display: block;
 } */
-
-
+.slick-list{
+  padding: 0!important;
+}
+.slider-package{
+ padding: 0 40px;
+}
 .containerSlider{
   padding: 10px 15px;
 }
@@ -123,7 +130,7 @@ html,body{
   color: #b5b6ba!important;
 }
 .itemSlider{
-  width: 211px !important;
+  /* width: 211px !important; */
   display: inline-block;
   padding: 0 10px;
 }
@@ -907,7 +914,7 @@ width: 100%;
     padding: 0 15px;
   }
   .slider-content{
-    left: 0;
+    left: 0!important;
     top: 150px;
   }
   .banner-img{
@@ -1048,7 +1055,7 @@ width: 100%;
   }
   .carousel-container{
     display: block!important;
-    width: 80%!important;
+    width: 70%!important;
     margin: auto;
   }
   .carousel-button::after{
