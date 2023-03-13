@@ -8,7 +8,9 @@ import CardTabLabel from "./components/CardTabLabel/CardTabLabel";
 import CardComment from "./components/CardComment/CardComment";
 import { useParams } from "react-router";
 import { jobSevice } from "../../services/jobService";
+import { useNavigate } from 'react-router-dom';
 export default function DetailPage() {
+  const navigate = useNavigate()
   //  tạo state để luu trữ data khi call từ api
   const [detail, setDetail] = React.useState();
   // lấy id từ url bằng useParam
@@ -16,8 +18,12 @@ export default function DetailPage() {
   // dùng react hook để call api và check nếu call api thành công sẽ gắn giá trị từ api vào state
   React.useEffect(() => {
     jobSevice.getDetailGig(id).then((data) => {
-      if (data.status === 200) setDetail(data.data.content[0]);
-    });
+      if (data.status === 200){ setDetail(data.data.content[0])}
+      else{
+        navigate('/sigin')
+      };
+    })
+    ;
   //  
   }, [id]);
 

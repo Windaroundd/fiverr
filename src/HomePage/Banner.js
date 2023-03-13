@@ -47,7 +47,7 @@ export default function Banner() {
 
   console.log('input: ', input);
   return (
-    <div>
+    <div className="">
       <Swiper
         EffectFade={true}
         loop={true}
@@ -76,8 +76,8 @@ export default function Banner() {
           <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/5.png" alt="" />
         </SwiperSlide>
       </Swiper>
-      <section className="slider-content mx-auto container">
-        <div className="search">
+      <section className="slider-content ">
+        <div className="search container mx-auto">
           <div className="content ">
             <div className="searchLeft">
               <h1>
