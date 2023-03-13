@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Card } from "antd";
-import { useEffect, useState} from "react";
+import { useEffect, useState,useMemo} from "react";
 import React from "react";
 import { jobSevice } from "./../services/jobService";
 import { useSelector } from "react-redux";
@@ -72,14 +72,14 @@ export default function TitlePage() {
     });
   };
 
-  useEffect(() => {
+  useMemo(() => {
     setItemFilter(filteredItem);
     // setTitleItem(itemFilter[0].tenLoaiCongViec)
   }, [filteredItem]);
 
   // console.log('itemfilter',itemFilter.tenLoaiCongViec);
   return (
-    <div className="w-full h-screen ">
+    <div className="w-full py-10">
       <div className="show-title  space-y-20">
         <div className="container mx-auto title-service  space-y-16">
           <div className="title-content  pt-32 flex flex-col justify-center items-center space-y-5">

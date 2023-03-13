@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -46,7 +46,7 @@ export default function Header() {
     // navigation('/job')
   };
 
-  useEffect(() => {
+  useMemo(() => {
     const changeBackground = () => {
       if (window.scrollY >= 10) {
         setNavBar(true);

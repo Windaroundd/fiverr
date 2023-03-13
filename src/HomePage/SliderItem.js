@@ -65,9 +65,9 @@ export default function SliderItem() {
     ]
   };
   return (
-    <div className="mx-auto mb-20 ">
+    <div className=" mb-20 ">
     
-      <div className="container">
+      <div className="container mx-auto">
       <h1 className="text-left d-block mx-auto pl-11 pb-7  text-2xl lg:text-4xl">Popular professional services</h1>
         <div className="slider-package">
         <Slider className="space-x-5" {...settings}>

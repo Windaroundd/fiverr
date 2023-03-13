@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useMemo } from "react";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -13,13 +13,15 @@ import { useState } from "react";
 export default function Footer() {
   const location = useLocation()
   const [paddingForTitle,setPaddingForTitle] = useState(false)
-  useEffect(() => { 
+  useMemo(() => { 
     if(location.pathname === "/title"){
-      return setPaddingForTitle(true)
+      setPaddingForTitle(true)
+    }else{
+      setPaddingForTitle(false)
     }
    },[location])
   return (
-    <div className={paddingForTitle? "footer-fiver-title": "footer-fiver py-8"}>
+    <div className={paddingForTitle? "footer-fiver-title py-8": "footer-fiver py-8"}>
       <div className="container mx-auto">
         <div className="footer-content w-full  flex flex-col justify-center items-start sm:justify-between sm:flex-row sm:items-start  ">
           <div className="footer-item lg:mr-5  text-left">
