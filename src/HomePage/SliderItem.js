@@ -65,7 +65,7 @@ export default function SliderItem() {
     ]
   };
   return (
-    <div className="container mx-auto mb-20 ">
+    <div className="mx-auto mb-20 ">
     
       <div className="container">
       <h1 className="text-left d-block mx-auto pl-11 pb-7  text-2xl lg:text-4xl">Popular professional services</h1>

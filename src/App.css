@@ -14,7 +14,7 @@ html,body{
     overflow-x: hidden!important;
 }
 .container{
-  max-width: 1336px;
+  max-width: 1400px;
 }
 .App-logo {
   height: 40vmin;
@@ -42,7 +42,7 @@ html,body{
 .slider-content{
   position: absolute;
   top: 200px;
-  padding-left: 40px;
+  padding-left: 200px;
   /* left:10%; */
   color: #fff;
   z-index: 1;
