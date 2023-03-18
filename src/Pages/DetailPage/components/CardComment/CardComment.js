@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useNavigate } from "react";
 import {
   Button,
   Comment,
@@ -14,6 +14,7 @@ import { jobSevice } from "./../../../../services/jobService";
 import { useSelector } from "react-redux";
 
 export default function CardComment() {
+  const navigate = useNavigate()
   const [comment, setComment] = useState();
   const [value, setValue] = useState("");
   const [comments, setComments] = useState([]);
@@ -22,6 +23,7 @@ export default function CardComment() {
 
   const { id } = useParams();
   useEffect(() => {
+    
     jobSevice.getClientComment(id).then((data) => {
       if (data.status === 200) setComment(data.data.content[0]);
     });

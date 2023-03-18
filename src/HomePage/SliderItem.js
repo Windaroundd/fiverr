@@ -72,37 +72,37 @@ export default function SliderItem() {
         <div className="slider-package">
         <Slider className="space-x-5" {...settings}>
           <div className="itemSlider">
-            <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs1.png' alt="not found" />
+            <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs1.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs2.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs2.png' alt="not found" />
           </div>
           <div style={{margin: '0 10px !important'}} className="">
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs3.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs3.png' alt="not found" />
           </div>
           </div>
           
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs4.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs4.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs5.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs5.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs6.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs6.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs7.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs7.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs8.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs8.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs9.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs9.png' alt="not found" />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs10.png' alt="not found" />
+          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs10.png' alt="not found" />
           </div>
         </Slider>
         </div>

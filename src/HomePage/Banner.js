@@ -60,20 +60,20 @@ export default function Banner() {
       >
         <SwiperSlide>
           <img
-           className="banner-img" 
+           loading="lazy" className="banner-img" 
            src="http://demo5.cybersoft.edu.vn/img/1.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/2.png" alt="" />
+          <img loading="lazy" className="banner-img" src="http://demo5.cybersoft.edu.vn/img/2.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/3.png" alt="" />
+          <img loading="lazy" className="banner-img" src="http://demo5.cybersoft.edu.vn/img/3.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/4.png" alt="" />
+          <img loading="lazy" className="banner-img" src="http://demo5.cybersoft.edu.vn/img/4.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="banner-img" src="http://demo5.cybersoft.edu.vn/img/5.png" alt="" />
+          <img loading="lazy" className="banner-img" src="http://demo5.cybersoft.edu.vn/img/5.png" alt="" />
         </SwiperSlide>
       </Swiper>
       <section className="slider-content ">
