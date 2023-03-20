@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { checkIcon } from "../assets/heroIcon";
 import { Modal } from "flowbite";
 import InfoModal from "./InfoModal";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 export default function Infor() {
   const [infoModal,setInfoModal] = useState(false)
   const handleCloseModal = () => { setInfoModal(false) }
@@ -94,7 +96,13 @@ export default function Infor() {
               data-bs-toggle="defaultModal"
               type="button"
             >
-              <img src="http://demo5.cybersoft.edu.vn/img/selling.png" alt="" />
+              <LazyLoadImage
+            style={{width:'100%'}}
+            className=""
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/selling.png"
+          /> 
+              
             </button>
            <InfoModal onClose={handleCloseModal} visible={infoModal}/>
            

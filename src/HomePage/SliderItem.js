@@ -2,32 +2,10 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 export default function SliderItem() {
-  // function SampleNextArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return <div className={className} onClick={onClick}
-  //   style={{...style,fontSize:'50px', opacity: .75,background:'transparent', }}
-  //   />
-    
-  // }
-  // function SamplePrevArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{
-  //         ...style,
-  //         display: "block",
-  //         background:'transparent',
-  //         color: "white",
-  //         fontSize: "50px",
-  //         zIndex: "1",
-  //         opacity: .75,
-  //       }}
-  //       onClick={onClick}
-  //     />
-  //   );
-  // }
+  
   let settings = {
     arrows: true,
     infinite: true,
@@ -72,37 +50,88 @@ export default function SliderItem() {
         <div className="slider-package">
         <Slider className="space-x-5" {...settings}>
           <div className="itemSlider">
-            <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs1.png' alt="not found" />
+           
+            <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs1.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs2.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs2.png"
+          />
           </div>
           <div style={{margin: '0 10px !important'}} className="">
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs3.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs3.png"
+          />
           </div>
           </div>
           
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs4.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs4.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs5.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs5.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs6.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs6.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs7.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs7.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs8.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs8.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs9.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs9.png"
+          />
           </div>
           <div className="itemSlider">
-          <img style={{width:'100%'}} loading="lazy" className="object-cover" src='http://demo5.cybersoft.edu.vn/img/crs10.png' alt="not found" />
+          <LazyLoadImage
+            style={{width:'100%'}}
+            className="object-cover"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/crs10.png"
+          />
           </div>
         </Slider>
         </div>

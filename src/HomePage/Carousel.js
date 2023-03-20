@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import { useState } from "react";
 import CarouselModal from "./CarouselModal";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 export default function Carousel() {
     const[srcVideo,setSrcVideo]= useState("")
     const[carouselModal, setCarouselModal]=useState(false)
@@ -70,11 +72,13 @@ export default function Carousel() {
         <div className="carousel-container">
           <div className="carousel-img">
             <button onClick={() => { handleOnClick(0) }}  className="carousel-button">
-              <img
-                className="w-100 h-100"
-                src="http://demo5.cybersoft.edu.vn/img/testimonial2.png"
-                alt="not found"
-              />
+             
+               <LazyLoadImage
+            
+            className="w-100 h-100"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/testimonial2.png"
+          />
             </button>
           </div>
           <div className="carousel-content-container ml-5 space-y-5 w-1/2">
@@ -90,11 +94,15 @@ export default function Carousel() {
               Caitlin Tormey, Chief Commercial <br></br> Officer
             </h5>
             <div className="img-content">
-              <span>
-                <img
-                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/naadam-logo-x2.0a3b198.png"
-                  alt=""
-                />
+              <span className="load">
+             
+           <LazyLoadImage
+            style={{width:'70%',height:"70%"}}
+            className=""
+            effect="blur"
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/naadam-logo-x2.0a3b198.png"
+          />
+              
               </span>
             </div>
             </div>
@@ -109,11 +117,13 @@ export default function Carousel() {
         <div className="carousel-container">
           <div className="carousel-img ">
             <button onClick={() => { handleOnClick(1) }} className="carousel-button">
-              <img
-                className="w-100 h-100"
-                src="http://demo5.cybersoft.edu.vn/img/testimonial3.png"
-                alt="not found"
-              />
+              
+                <LazyLoadImage
+            
+            className="w-100 h-100"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/testimonial3.png"
+          />
             </button>
           </div>
           <div className="carousel-content-container ml-5 space-y-5 w-1/2">
@@ -129,11 +139,14 @@ export default function Carousel() {
              Brighid Gannon (DNP, PMHNP-BC),<br></br> Co-Founder
             </h5>
             <div className="img-content">
-              <span>
-                <img
-                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lavender-logo-x2.89c5e2e.png"
-                  alt=""
-                />
+              <span className="load">
+              <LazyLoadImage
+            style={{width:'70%',height:"70%"}}
+            className=""
+            effect="blur"
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lavender-logo-x2.89c5e2e.png"
+          />
+                
               </span>
             </div>
             </div>
@@ -148,11 +161,13 @@ export default function Carousel() {
         <div className="carousel-container">
           <div className="carousel-img ">
             <button onClick={() => { handleOnClick(2) }} className="carousel-button">
-              <img
-                className="w-100 h-100"
-                src="http://demo5.cybersoft.edu.vn/img/testimonial4.png"
-                alt="not found"
-              />
+             
+               <LazyLoadImage
+            
+            className="w-100 h-100"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/testimonial4.png"
+          />
             </button>
           </div>
           <div className="carousel-content-container ml-5 space-y-5 w-1/2">
@@ -168,11 +183,14 @@ export default function Carousel() {
              Tim and Dan Joo, <br></br>Co-Founders
             </h5>
             <div className="img-content">
-              <span>
-                <img
-                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/haerfest-logo-x2.03fa5c5.png"
-                  alt=""
-                />
+              <span className="load">
+               
+                 <LazyLoadImage
+            style={{width:'70%',height:"70%"}}
+            className=""
+            effect="blur"
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/haerfest-logo-x2.03fa5c5.png"
+          />
               </span>
             </div>
             </div>
@@ -187,11 +205,15 @@ export default function Carousel() {
         <div className="carousel-container">
           <div className="carousel-img ">
             <button onClick={()=>{handleOnClick(3)}} className="carousel-button">
-              <img
-                className="w-100 h-100"
-                src="http://demo5.cybersoft.edu.vn/img/testimonial1.png"
-                alt="not found"
-              />
+            
+              
+              <LazyLoadImage
+            
+            className="w-100 h-100"
+            effect="blur"
+            src="http://demo5.cybersoft.edu.vn/img/testimonial1.png"
+          />
+
             </button>
           </div>
           <div className="carousel-content-container ml-5 space-y-5 w-1/2">
@@ -207,11 +229,15 @@ export default function Carousel() {
               Kay Kim, Co-Founder
             </h5>
             <div className="img-content">
-              <span>
-                <img
-                  src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/rooted-logo-x2.321d79d.png"
-                  alt=""
-                />
+              <span className="load">
+              
+                 <LazyLoadImage
+            style={{width:'70%',height:"70%"}}
+            className=""
+            effect="blur"
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/rooted-logo-x2.321d79d.png"
+          />
+                
               </span>
             </div>
             </div>
